@@ -1,11 +1,16 @@
 import Navbar from './Navbar.js';
-import React from "react"
+import Footer from './footer.js';
+import "../App.css";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <Routes>
+    <div>
+    {/* <Routes> */}
       <Navbar/>
-    </Routes>
+      <Footer/>
+    {/* </Routes> */}
+    </div>
   );
 }
 

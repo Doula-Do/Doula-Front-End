@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar.js';
 import Footer from './footer.js';
-import familyimg from '../images/familyimg.jpeg'
+// import familyimg from '../images/familyimg.jpeg'
 function Homepage() {
     return(
         <div>

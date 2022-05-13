@@ -16,4 +16,35 @@
 .doulaFooter {
   display: flex;
   justify-content: center;
+  background-color: hsl(0, 45%, 95%);
+}
+
+
+
+
+
+
+/* impacts page */
+.impactsImgContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.impactsImg {
+  width: 90%;
+  height: 800px;
+  border-radius: 20px;
+}
+
+.impactsPosts {
+  display: flex;
+  justify-content: center;
+}
+
+.impacts {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -5,8 +5,6 @@ import SignIn from "./SignIn";
 import { Routes, Route } from "react-router-dom";
 import Impacts from "./Impacts";
 
-import FamilySignUp from "./FamilySignUp";
-
 function App() {
   return (
     <div>
@@ -14,7 +12,6 @@ function App() {
        <Route path="/" element={<Homepage />} />
        <Route path="/SignIn" element={<SignIn/>} />
        <Route path="/impacts" element={<Impacts />} />
-       <Route path="/FamilySignUp" element={<FamilySignUp />} />
     </Routes>
     </div>
   );

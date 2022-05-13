@@ -1,10 +1,10 @@
 import "../App.css";
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from "./Homepage";
 import SignIn from "./SignIn";
 import { Routes, Route } from "react-router-dom";
 import Impacts from "./Impacts";
-
 import FamilySignUp from "./FamilySignUp";
 
 function App() {

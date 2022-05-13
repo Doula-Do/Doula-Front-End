@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Homepage from "./Homepage";
 import SignIn from "./SignIn";
 import { Routes, Route } from "react-router-dom";
-import Impacts from "./Impacts";
+import Impacts from "./ImpactsPage/Impacts";
 import FamilySignUp from "./FamilySignUp";
 
 function App() {

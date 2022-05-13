@@ -4,15 +4,18 @@ import Homepage from "./Homepage";
 import { Routes, Route } from "react-router-dom";
 import Impacts from "./Impacts";
 
+import FamilySignUp from "./FamilySignUp";
+
 function App() {
   return (
     <div>
     <Routes>
        <Route path="/" element={<Homepage />} />
        <Route path="/impacts" element={<Impacts />} />
+       
 
-
-
+       <Route path="/FamilySignUp" element={<FamilySignUp />} />
+       
 
 
 

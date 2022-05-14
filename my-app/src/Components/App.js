@@ -5,7 +5,7 @@ import Homepage from "./Homepage";
 import SignIn from "./SignIn";
 import { Routes, Route } from "react-router-dom";
 import Impacts from "./ImpactsPage/Impacts";
-import FamilySignUp from "./FamilySignUp";
+import FamilySignUp from "./SignUpPages/FamilySignUp";
 
 function App() {
   return (

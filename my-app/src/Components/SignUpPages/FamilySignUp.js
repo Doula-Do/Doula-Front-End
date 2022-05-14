@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { Form, FormGroup, Label, Input,FormText} from 'reactstrap';
+import "./SignUpApplication.css"
+import { Button,Form, FormGroup, Label, Input,FormText} from 'reactstrap';
 
 
 
@@ -14,33 +14,84 @@ class FamilySignUp extends React.Component {
         return (
   <Form>
   <FormGroup>
-    <Label for="exampleEmail">
-      Plain Text (Static)
+    <h1>
+      Hey Family!
+    </h1>
+  </FormGroup>
+  <FormGroup>
+    <Label for="FirstName">
+      First Name:
     </Label>
     <Input
-      plaintext
-      value="Some plain text/ static value"
+      id="FirstName"
+      name="FirstName"
+      placeholder="Type your first name"
+      type="text"
     />
   </FormGroup>
   <FormGroup>
-    <Label for="exampleEmail">
-      Email
+    <Label for="LastName">
+      Last Name:
     </Label>
     <Input
-      id="exampleEmail"
+      id="LastName"
+      name="LastName"
+      placeholder="Type your last name"
+      type="text"
+    />
+  </FormGroup>
+  <FormGroup>
+    <Label for="Email">
+      Email:
+    </Label>
+    <Input
+      id="Email"
       name="email"
-      placeholder="with a placeholder"
+      placeholder="Type your Email"
       type="email"
     />
   </FormGroup>
   <FormGroup>
-    <Label for="examplePassword">
-      Password
+    <Label for="PartnerFirstName">
+      Partner First Name (Optional):
     </Label>
     <Input
-      id="examplePassword"
+      id="PartnerFirstName"
+      name="FirstName"
+      placeholder="Type your Partner's first name"
+      type="text"
+    />
+  </FormGroup>
+  <FormGroup>
+    <Label for="PartnerLastName">
+      Partner Last Name (Optional):
+    </Label>
+    <Input
+      id="PartnerLastName"
+      name="PartnerLastName"
+      placeholder="Type your Partner's last name"
+      type="text"
+    />
+  </FormGroup>
+  <FormGroup>
+    <Label for="CreatePassword">
+      Create Password
+    </Label>
+    <Input
+      id="CreatePassword"
       name="password"
-      placeholder="password placeholder"
+      placeholder="Enter password"
+      type="password"
+    />
+  </FormGroup>
+  <FormGroup>
+    <Label for="ConfirmPassword">
+      Create Password
+    </Label>
+    <Input
+      id="ConfirmPassword"
+      name="password"
+      placeholder="Re-Enter Password"
       type="password"
     />
   </FormGroup>
@@ -220,7 +271,7 @@ class FamilySignUp extends React.Component {
       Check me out
     </Label>
   </FormGroup>
-  {/* <button type="submit"> Submit </ button> */}
+  <Button type="submit"> Next </ Button>
 </Form>
         )
     }

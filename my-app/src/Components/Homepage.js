@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from './Navbar.js';
-import Footer from './footer.js';
+import Navbar from './navbar/Navbar.js';
+import Footer from './footer/footer.js';
 // import familyimg from '../images/familyimg.jpeg'
 function Homepage() {
     return(

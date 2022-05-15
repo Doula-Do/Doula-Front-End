@@ -1,0 +1,19 @@
+.navbar {
+    background-color: #FCF2F2;
+    color: black;
+    margin-top: -20px;
+}
+
+.name {
+    margin-left: 20px;
+    color: black;
+}
+
+.navLinkHolder {
+    display: flex;
+}
+
+.pageLinks {
+    text-decoration: none;
+    color:black;
+}

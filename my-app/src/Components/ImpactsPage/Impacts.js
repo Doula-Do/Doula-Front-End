@@ -1,5 +1,5 @@
-import Footer from "../footer";
-import Navbar from "../Navbar";
+import Footer from "../footer/footer";
+import Navbar from "../navbar/Navbar";
 import "./impacts.css"; 
 
 function Impacts() {

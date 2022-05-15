@@ -9,6 +9,7 @@ function Impacts() {
       <div className="impactsImgContainer">
         <img
           className="impactsImg"
+          alt=""
           src="https://truthout.org/wp-content/uploads/2019/04/2019_0421-black-family-1200x800.jpg"
         />
       </div>

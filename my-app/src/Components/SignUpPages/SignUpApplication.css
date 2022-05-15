@@ -4,7 +4,8 @@
     h1 {
     text-align: center;
     }
-  Form {
+    
+ .signUpForm {
      background-color: lavenderblush;
      height: 100%;
      width: 100%;

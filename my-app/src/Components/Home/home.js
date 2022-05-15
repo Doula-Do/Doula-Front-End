@@ -7,8 +7,20 @@ import PostForm from "./postForm";
 import Post from "./post";
 import ExtraInfo from "./extraInfo";
 import "./home.css";
+import { useEffect } from "react";
+import AppContext from "../../context/AppContext";
+import {useContext} from 'react';
 
 function Home() {
+  const {setUsers, users} = useContext(AppContext);
+  const user = users[0];
+
+  useEffect(() => {
+    fetch("http://localhost:8000/users")
+      .then((response) => response.json())
+      .then((data) => setUsers(data.data));
+  }, []);
+  
   return (
     <div>
       <Navbar />
@@ -22,19 +34,19 @@ function Home() {
                   <div className="card-heading clearfix">
                     <h4 className="card-title text-center">User Profile</h4>
                   </div>
-                  <ProfileCard />
+                  <ProfileCard obj={user}/>
                   <hr />
                   <div className="card-heading clearfix mt-3">
                     <h4 className="card-title text-center">About</h4>
                   </div>
-                  <About />
+                  <About obj={user}/>
                   <hr />
                   <div className="card-heading clearfix mt-3">
                     <h4 className="card-title text-center">
                       Contact Information
                     </h4>
                   </div>
-                  <ContactInfo />
+                  <ContactInfo obj={user}/>
                 </div>
               </div>
               <div className="col-lg-7 col-xl-6">

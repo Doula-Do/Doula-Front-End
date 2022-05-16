@@ -1,7 +1,7 @@
 import "../App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Homepage from "./Homepage";
+import Homepage from "../Components/Homepage/Homepage";
 import SignIn from "./SignInPage/SignIn";
 import { Routes, Route } from "react-router-dom";
 import Impacts from "./ImpactsPage/Impacts";

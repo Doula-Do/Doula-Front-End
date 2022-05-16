@@ -1,20 +1,53 @@
 import "./signin.css"; 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import {useState} from 'react'
+
 function SignIn() {
+	const [email ,setEmail] = useState("")
+	const [password, setPassword] = useState("")
+
+	const onFormSubmit = (e) => {
+		e.preventDefault()
+		const options = {
+            method: 'POST',
+			headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({email:email, password:password})
+        };
+
+      try{
+        fetch('http://localhost:8000/login', options).then((response) => {
+			if(response.status !== 200){
+				alert("wrong email or password")
+				return;
+			}
+         document.location.replace("/")
+        });
+      }
+
+      catch (error) {
+        alert('Login Failed. Try Again')
+      }
+
+    };
+
+	
+	
     return (
-		<div class="main">
-			<p class="sign" align="center">Sign in</p>
-			<form class="form1"/>
-			<input class="un " type="text" align="center" placeholder="Username"/>
-			<input class="un " type="text" align="center" placeholder="Email"/>
-			<input class="pass" type="password" align="center" placeholder="Password"/>
-			<button type="submit" class="submit" align="center">Sign in</button>
-			<p class="forgot" align="center">Forgot Password?</p>  
-			<p class="notenrolled" align="center">Not Enrolled? Sign Up Now.</p>    
-			<button type="submit" class="doulasignup" align="center">Doula Sign Up</button><br/><br/>
-			<button  type="submit" class="familysignup" align="center"> <Link to="/FamilySignUp">Family Sign Up</Link></button>          
+		<div className="main">
+			<p className="sign" align="center">Sign in</p>
+			<form className="form1">
+			{/* <input class="un " type="text" align="center" placeholder="Username"/> */}
+			<input className="un " type="text" autoComplete="username" align="center" placeholder="Email" value={email} onChange={(e)=> {setEmail(e.target.value);} }/>
+			<input className="pass" type="password"  autoComplete="current-password" align="center" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value)}}/>
+			<button onClick={onFormSubmit} type="submit" className="submit" align="center">Sign in</button>
+			</form>
+			<p className="forgot" align="center">Forgot Password?</p>  
+			<p className="notenrolled" align="center">Not Enrolled? Sign Up Now.</p>    
+			<button type="submit" className="doulasignup" align="center">Doula Sign Up</button><br/><br/>
+			<button  type="submit" className="familysignup" align="center"> <Link to="/FamilySignUp">Family Sign Up</Link></button>          
     </div>
 	)
 }
+
 
 export default SignIn;

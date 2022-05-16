@@ -12,7 +12,7 @@ class FamilySignUp extends React.Component {
     render(){
        
         return (
-  <Form>
+  <Form className="SignUpForm">
   <FormGroup>
     <h1>
       Hey Family!
@@ -74,11 +74,11 @@ class FamilySignUp extends React.Component {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="CreatePassword">
-      Create Password
+    <Label for="EnterPassword">
+      Enter Password:
     </Label>
     <Input
-      id="CreatePassword"
+      id="EnterPassword"
       name="password"
       placeholder="Enter password"
       type="password"
@@ -86,7 +86,7 @@ class FamilySignUp extends React.Component {
   </FormGroup>
   <FormGroup>
     <Label for="ConfirmPassword">
-      Create Password
+      Confirm Password:
     </Label>
     <Input
       id="ConfirmPassword"
@@ -96,85 +96,82 @@ class FamilySignUp extends React.Component {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="exampleUrl">
-      Url
+    <Label for="GenderSelect">
+      Gender:
     </Label>
     <Input
-      id="exampleUrl"
-      name="url"
-      placeholder="url placeholder"
-      type="url"
-    />
+      id="GenderSelect"
+      name="select"
+      type="select"
+    >
+      <option>
+        Woman
+      </option>
+      <option>
+        Man
+      </option>
+    </Input>
   </FormGroup>
   <FormGroup>
-    <Label for="exampleNumber">
-      Number
+    <Label for="medicaidSelect">
+     Do you have medicaid?
     </Label>
     <Input
-      id="exampleNumber"
+      id="medicaidSelect"
+      name="select"
+      type="select"
+    >
+      <option>
+        Yes
+      </option>
+      <option>
+         No
+      </option>
+    </Input>
+  </FormGroup>
+  <FormGroup>
+    <Label for="medicaidSelect">
+    Do you have a Doula?
+    </Label>
+    <Input
+      id="medicaidSelect"
+      name="select"
+      type="select"
+    >
+      <option>
+        Yes
+      </option>
+      <option>
+         No
+      </option>
+    </Input>
+  </FormGroup>
+  <FormGroup>
+    <Label for="ContactNumber">
+      Contact Number:
+    </Label>
+    <Input
+      id="ContactNumber"
       name="number"
       placeholder="number placeholder"
       type="number"
     />
   </FormGroup>
   <FormGroup>
-    <Label for="exampleDatetime">
-      Datetime
+    <Label for="BirthdayDate">
+      Date of Birth:
     </Label>
     <Input
-      id="exampleDatetime"
-      name="datetime"
-      placeholder="datetime placeholder"
-      type="datetime"
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label for="exampleDate">
-      Date
-    </Label>
-    <Input
-      id="exampleDate"
+      id="BirthDayDate"
       name="date"
       placeholder="date placeholder"
       type="date"
     />
   </FormGroup>
-  <FormGroup>
-    <Label for="exampleTime">
-      Time
-    </Label>
-    <Input
-      id="exampleTime"
-      name="time"
-      placeholder="time placeholder"
-      type="time"
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label for="exampleColor">
-      Color
-    </Label>
-    <Input
-      id="exampleColor"
-      name="color"
-      placeholder="color placeholder"
-      type="color"
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label for="exampleSearch">
-      Search
-    </Label>
-    <Input
-      id="exampleSearch"
-      name="search"
-      placeholder="search placeholder"
-      type="search"
-    />
-  </FormGroup>
+  
   <FormGroup>
     <Label for="exampleSelect">
-      Select
+       ZipCode:
     </Label>
     <Input
       id="exampleSelect"
@@ -182,96 +179,27 @@ class FamilySignUp extends React.Component {
       type="select"
     >
       <option>
-        1
+        11203
       </option>
       <option>
-        2
+        11206
       </option>
       <option>
-        3
+        11205
       </option>
       <option>
-        4
+        11236
       </option>
       <option>
-        5
+      10030
       </option>
     </Input>
   </FormGroup>
-  <FormGroup>
-    <Label for="exampleSelectMulti">
-      Select Multiple
-    </Label>
-    <Input
-      id="exampleSelectMulti"
-      multiple
-      name="selectMulti"
-      type="select"
-    >
-      <option>
-        1
-      </option>
-      <option>
-        2
-      </option>
-      <option>
-        3
-      </option>
-      <option>
-        4
-      </option>
-      <option>
-        5
-      </option>
-    </Input>
-  </FormGroup>
-  <FormGroup>
-    <Label for="exampleText">
-      Text Area
-    </Label>
-    <Input
-      id="exampleText"
-      name="text"
-      type="textarea"
-    />
-  </FormGroup>
-  <FormGroup>
-    <Label for="exampleFile">
-      File
-    </Label>
-    <Input
-      id="exampleFile"
-      name="file"
-      type="file"
-    />
     <FormText>
-      This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.
+     You are almost Done, one more page to fill out!
     </FormText>
-  </FormGroup>
-  <FormGroup>
-    <Label for="exampleRange">
-      Range
-    </Label>
-    <Input
-      id="exampleRange"
-      name="range"
-      type="range"
-    />
-  </FormGroup>
-  <FormGroup check>
-    <Input type="radio" />
-    {' '}Option one is this and that—be sure to
-    <Label check>
-      include why it's great
-    </Label>
-  </FormGroup>
-  <FormGroup check>
-    <Input type="checkbox" />
-    <Label check>
-      Check me out
-    </Label>
-  </FormGroup>
-  <Button type="submit"> Next </ Button>
+  <Button className="FamilyButton" type="submit"> Next </ Button>
+  
 </Form>
         )
     }

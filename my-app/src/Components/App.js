@@ -7,6 +7,8 @@ import { Routes, Route } from "react-router-dom";
 import Impacts from "./ImpactsPage/Impacts";
 import FamilySignUp from "./SignUpPages/FamilySignUp";
 import Home from "./Home/home.js";
+import DoulaSignUp from "./SignUpPages/DoulaSignUp";
+import FamilySignUpTwo from "./SignUpPages/FamilySignUp2";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/impacts" element={<Impacts />} />
         <Route path="/FamilySignUp" element={<FamilySignUp />} />
+        <Route path="/FamilySignUpTwo" element={<FamilySignUpTwo />} /> 
+        <Route path="/DoulaSignUp" element={<DoulaSignUp />} />
       </Routes>
     </div>
   );

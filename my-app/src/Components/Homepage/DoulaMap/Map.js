@@ -3,15 +3,15 @@ import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 const containerStyle = {
   width: '400px',
-  height: '400px'
+  height: '400px',
 };
 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 	40.730610,
+  lng: -73.935242
 };
 
-function MyComponent() {
+function DoulaMapLoader() {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyCzaZkyjl3bdTuYl9pHS1lsVvE5oLFGZKE"
@@ -33,7 +33,7 @@ function MyComponent() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={8}
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
@@ -43,4 +43,4 @@ function MyComponent() {
   ) : <></>
 }
 
-export default React.memo(MyComponent)
+export default React.memo(DoulaMapLoader)

@@ -13,7 +13,7 @@ import {useContext} from 'react';
 
 function Home() {
   const {setUsers, users} = useContext(AppContext);
-  const user = users[0];
+  const user = users[2];
 
   useEffect(() => {
     fetch("http://localhost:8000/users")

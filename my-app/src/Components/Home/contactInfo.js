@@ -1,4 +1,6 @@
 function ContactInfo(props) {
+  // const user = props.obj;
+
   return (
     <div className="card-body">
       <div className="table-responsive">
@@ -6,7 +8,7 @@ function ContactInfo(props) {
           <tbody>
             <tr>
               <th scope="row">Email:</th>
-              <td>addyour@emailhere</td>
+              {/* <td>{user.email}</td> */}
             </tr>
             <tr>
               <th scope="row">Phone:</th>

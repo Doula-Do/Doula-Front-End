@@ -1,6 +1,7 @@
 import React from 'react'
-import Navbar from './navbar/Navbar.js';
-import Footer from './footer/footer.js';
+import Navbar from '../navbar/Navbar.js';
+import Footer from '../footer/footer.js';
+import DoulaMapLoader from '../Homepage/DoulaMap/Map.js';
 // import familyimg from '../images/familyimg.jpeg'
 function Homepage() {
     return(
@@ -15,6 +16,7 @@ function Homepage() {
             <input type="text" name="name" />
             </label>
         </form>
+        <DoulaMapLoader/>
         <Footer/>
         </div>
     )

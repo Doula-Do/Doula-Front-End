@@ -12,7 +12,7 @@ class FamilySignUp extends React.Component {
     render(){
        
         return (
-  <Form className="SignUpForm">
+  <Form className='signUpForm'>
   <FormGroup>
     <h1>
       Hey Family!

@@ -1,4 +1,6 @@
 function ProfileCard(props) {
+  // const user = props.obj;
+  
   return (
     <div className="card-body user-profile-card mb-3">
       <img
@@ -7,7 +9,7 @@ function ProfileCard(props) {
         alt=""
       />
       <h4 className="text-center h6 mt-2">Filler Name</h4>
-      <p className="text-center small">UI/UX Designer</p>
+      {/* <h4 className="text-center h6 mt-2">{user.first_name} {user.last_name}</h4> */}
       <button className="btn btn-theme btn-sm">Message</button>
     </div>
   );

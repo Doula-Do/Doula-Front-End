@@ -3,6 +3,8 @@
   }
     h1 {
     text-align: center;
+    background-color: paleturquoise;
+    border-radius: 15px;
     }
     
  .signUpForm {
@@ -17,7 +19,14 @@
   }
 
   .form-label {
-      color: lightblue;
+      color: rgb(1, 7, 8);
+  }
+
+  .FamilyButton.btn.btn.btn-secondary {
+    float:right;
+    background-color: paleturquoise;
+    border-color: paleturquoise;
+    color: black;
   }
 
   

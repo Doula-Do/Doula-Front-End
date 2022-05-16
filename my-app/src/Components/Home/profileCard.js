@@ -1,5 +1,5 @@
 function ProfileCard(props) {
-  const user = props.obj;
+  // const user = props.obj;
   
   return (
     <div className="card-body user-profile-card mb-3">
@@ -8,7 +8,8 @@ function ProfileCard(props) {
         className="user-profile-image rounded-circle"
         alt=""
       />
-      <h4 className="text-center h6 mt-2">{user.first_name} {user.last_name}</h4>
+      <h4 className="text-center h6 mt-2">Filler Name</h4>
+      {/* <h4 className="text-center h6 mt-2">{user.first_name} {user.last_name}</h4> */}
       <button className="btn btn-theme btn-sm">Message</button>
     </div>
   );

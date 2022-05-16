@@ -12,14 +12,14 @@ import AppContext from "../../context/AppContext";
 import {useContext} from 'react';
 
 function Home() {
-  const {setUsers, users} = useContext(AppContext);
-  const user = users[2];
+  // const {setUsers, users} = useContext(AppContext);
+  // const user = users[2];
 
-  useEffect(() => {
-    fetch("http://localhost:8000/users")
-      .then((response) => response.json())
-      .then((data) => setUsers(data.data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("http://localhost:8000/users")
+  //     .then((response) => response.json())
+  //     .then((data) => setUsers(data.data));
+  // }, []);
   
   return (
     <div>
@@ -34,19 +34,22 @@ function Home() {
                   <div className="card-heading clearfix">
                     <h4 className="card-title text-center">User Profile</h4>
                   </div>
-                  <ProfileCard obj={user}/>
+                  <ProfileCard />
+                  {/* <ProfileCard obj={user}/> */}
                   <hr />
                   <div className="card-heading clearfix mt-3">
                     <h4 className="card-title text-center">About</h4>
                   </div>
-                  <About obj={user}/>
+                  <About />
+                  {/* <About obj={user}/> */}
                   <hr />
                   <div className="card-heading clearfix mt-3">
                     <h4 className="card-title text-center">
                       Contact Information
                     </h4>
                   </div>
-                  <ContactInfo obj={user}/>
+                  <ContactInfo />
+                  {/* <ContactInfo obj={user}/> */}
                 </div>
               </div>
               <div className="col-lg-7 col-xl-6">

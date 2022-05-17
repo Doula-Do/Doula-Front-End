@@ -11,8 +11,9 @@ import { useEffect } from "react";
 import AppContext from "../../context/AppContext";
 import {useContext} from 'react';
 
+
 function Home() {
-  // const {setUsers, users} = useContext(AppContext);
+  const {posts, setPosts} = useContext(AppContext);
   // const user = users[2];
 
   // useEffect(() => {
@@ -20,7 +21,13 @@ function Home() {
   //     .then((response) => response.json())
   //     .then((data) => setUsers(data.data));
   // }, []);
-  
+
+  useEffect(() => {
+    fetch("http://localhost:8000/posts")
+    .then(response => response.json())
+    .then(data => setPosts(data.data))
+  },[])
+
   return (
     <div>
       <Navbar />
@@ -60,7 +67,10 @@ function Home() {
                 </div>
                 <div className="profile-timeline">
                   <ul className="list-unstyled">
-                    <Post />
+                    {posts.length > 0 && 
+                      posts.map((data) => <Post p={data}/>)
+                    }
+                    
                   </ul>
                 </div>
               </div>

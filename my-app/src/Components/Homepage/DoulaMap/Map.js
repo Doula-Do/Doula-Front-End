@@ -16,6 +16,12 @@ function App() {
     return <div>Map cannot be loaded right now, sorry.</div>
   }
 
+  const clinicMarkers = [{ 
+    id: 1,
+    name: "Chicago, Illinois",
+    address: "123 conch st, 11204",
+    position: { lat: 41.881832, lng: -87.623177}}]
+
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={{

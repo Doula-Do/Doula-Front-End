@@ -5,7 +5,6 @@ const ContextProvider = (props) => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const [postInput, setpostInput] = useState("");
-
   const context = {
     users,
     setUsers,
@@ -13,6 +12,7 @@ const ContextProvider = (props) => {
     setPosts,
     postInput,
     setpostInput
+    setPosts
   };
 
   return (

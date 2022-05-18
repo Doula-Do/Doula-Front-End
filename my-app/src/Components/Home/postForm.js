@@ -20,11 +20,12 @@ function PostForm() {
       })
     })
      const data = await response.json();
-     data.post[0].first_name = "Matt"
-     data.post[0].last_name = "Tan"
+     data.post[0].first_name = "Andrew"
+     data.post[0].last_name = "Enoe"
      setPosts([data.post[0], ...posts]);
     }
     createNewPost();
+    setpostInput("");
   }
 
   return (

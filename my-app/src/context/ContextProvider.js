@@ -2,17 +2,16 @@ import React, { useState } from "react";
 import AppContext from "./AppContext";
 
 const ContextProvider = (props) => {
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState([]);
   const [posts, setPosts] = useState([]);
   const [postInput, setpostInput] = useState("");
   const context = {
-    users,
-    setUsers,
+    user,
+    setUser,
     posts,
     setPosts,
     postInput,
     setpostInput
-    setPosts
   };
 
   return (

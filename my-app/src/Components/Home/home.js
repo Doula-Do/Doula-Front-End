@@ -14,13 +14,6 @@ import {useContext} from 'react';
 
 function Home() {
   const {posts, setPosts} = useContext(AppContext);
-  // const user = users[2];
-
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/users")
-  //     .then((response) => response.json())
-  //     .then((data) => setUsers(data.data));
-  // }, []);
 
   useEffect(() => {
     fetch("http://localhost:8000/posts")

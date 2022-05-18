@@ -16,11 +16,19 @@ function App() {
     return <div>Map cannot be loaded right now, sorry.</div>
   }
 
-  const clinicMarkers = [{ 
+  const clinicMarkers = [
+    { 
     id: 1,
-    name: "Chicago, Illinois",
-    address: "123 conch st, 11204",
-    position: { lat: 41.881832, lng: -87.623177}}]
+    clinicname: "Ancient Song Doula Services",
+    address: "521 Halsey Street, Brooklyn, New York 11233 ",
+    position: { lat: 40.683970, lng: -73.931860}
+  },
+    {
+    id: 2,
+    clinicname: "Caribbean Womens Health Association",
+    address: "3512 Church Ave Brooklyn, NY 11203",
+    position: { lat: 40.650860, lng: -73.944310}}
+  ];
 
   return isLoaded ? (
     <GoogleMap
@@ -34,16 +42,12 @@ function App() {
         lng: -73.935242
       }}
     >
-      <MarkerF position={{
-        lat: 40.668470,
-        lng: -73.982530
-      }}
-      />
-      <MarkerF position={{
-      lat: 40.683970,
-    lng: -73.931860
-      }}
-      />
+      {clinicMarkers.map(({id, clinicname, address, position }) => 
+        <MarkerF
+          key= {id}
+          position= {position}
+        ></MarkerF>
+      )}
     </GoogleMap>
   ): <Spinner />
 }

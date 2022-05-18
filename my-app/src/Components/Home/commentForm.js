@@ -3,7 +3,7 @@ function CommentForm(props) {
     <form>
       <textarea
         className="form-control"
-        placeholder="Write something.."
+        placeholder="What's on your mind?"
       ></textarea>
       <div className="post-options">
         <button className="btn btn-outline-primary postButton">Post</button>

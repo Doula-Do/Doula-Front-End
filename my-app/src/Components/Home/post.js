@@ -2,8 +2,11 @@ import CommentForm from "./commentForm";
 import Comments from "./comments";
 import Dropdown from './dropdown';
 import { DateTime } from "luxon";
+import { useContext } from "react";
+import AppContext from "../../context/AppContext";
 
 function Post(props) {
+  const {user} = useContext(AppContext);
   const post = props.p;
   return (
     <li className="timeline-item">
@@ -21,7 +24,9 @@ function Post(props) {
                 <small>{DateTime.fromISO(post.created_at).toRelative()}</small>
               </p>
             </div>
+            {user.id === post.user_id && (
             <Dropdown postid={post.id}/>
+            )}
           </div>
           <div className="timeline-item-post">
             <p>{post.content}</p>

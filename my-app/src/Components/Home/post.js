@@ -7,7 +7,7 @@ import AppContext from "../../context/AppContext";
 import { useEffect, useState } from "react";
 
 function Post(props) {
-  const [showComments, setShowComments] = useState(true);
+  const [showComments, setShowComments] = useState(false);
 
   const {user, comments, setComments} = useContext(AppContext);
   const post = props.p;
@@ -53,9 +53,10 @@ function Post(props) {
                     {postComments.map(comment => <Comments data={comment} comments={comments} setComments={setComments}/>)}
                   </>
                 )}
-                <CommentForm data={props} setComments={setComments}/>
+                {/* <CommentForm data={props} setComments={setComments}/> */}
               </>
             )}
+            <CommentForm data={props} setComments={setComments}/>
           </div>
         </div>
       </div>

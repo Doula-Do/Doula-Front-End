@@ -1,7 +1,7 @@
 import {useState, useContext} from 'react';
 import "./SignUpApplication.css"
 import { Button,Form, FormGroup, Label, Input,FormText} from 'reactstrap';
-import AppContext from '../../Context/AppContext'
+import AppContext from '../../context/AppContext'
 import { Link } from 'react-router-dom'
 
 

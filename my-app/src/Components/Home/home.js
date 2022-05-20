@@ -8,19 +8,19 @@ import Post from "./post";
 import ExtraInfo from "./extraInfo";
 import "./home.css";
 import { useEffect } from "react";
-import AppContext from "../../Context/AppContext";
+import AppContext from "../../context/AppContext";
 import {useContext} from 'react';
 
-function Home() {
-  // const {setUsers, users} = useContext(AppContext);
-  // const user = users[2];
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/users")
-  //     .then((response) => response.json())
-  //     .then((data) => setUsers(data.data));
-  // }, []);
-  
+function Home() {
+  const {posts, setPosts} = useContext(AppContext);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/posts")
+    .then(response => response.json())
+    .then(data => setPosts(data.data))
+  },[])
+
   return (
     <div>
       <Navbar />
@@ -60,7 +60,9 @@ function Home() {
                 </div>
                 <div className="profile-timeline">
                   <ul className="list-unstyled">
-                    <Post />
+                    {posts.length > 0 && 
+                      posts.map((data) => <Post p={data}/>)
+                    }
                   </ul>
                 </div>
               </div>

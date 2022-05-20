@@ -1,38 +1,61 @@
 import CommentForm from "./commentForm";
 import Comments from "./comments";
+import Dropdown from './dropdown';
+import { DateTime } from "luxon";
+import { useContext } from "react";
+import AppContext from "../../context/AppContext";
+import { useEffect, useState } from "react";
 
 function Post(props) {
+  const [showComments, setShowComments] = useState(false);
+
+  const {user, comments, setComments} = useContext(AppContext);
+  const post = props.p;
+  const postComments = comments.filter(comment => post.id === comment.post_id);
+
+  function handleToggle() {
+    setShowComments(!showComments);
+  };
+
   return (
     <li className="timeline-item">
       <div className="card card-white grid-margin">
         <div className="card-body">
-          <div className="timeline-item-header">
-            <img
-              src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="
-              alt=""
-            />
-            <p>
-              Vikash smith <span>posted a status</span>
-            </p>
-            <small>3 hours ago</small>
+          <div className="timelineHeader">
+            <div className="timeline-item-header timelineHeader">
+              <img
+                src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="
+                alt=""
+              />
+              <p>
+                {post.first_name} {post.last_name}
+                <br></br>
+                <small>{DateTime.fromISO(post.created_at).toRelative()}</small>
+              </p>
+            </div>
+            {user.id === post.user_id && (
+            <Dropdown postid={post.id}/>
+            )}
           </div>
           <div className="timeline-item-post">
-            <p>
-              Elavita veritatis et quasi architecto beatae vitae dicta sunt
-              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-              aut odit aut fugit, sed quia consequuntur.
-            </p>
+            <p>{post.content}</p>
             <div className="timeline-options">
-              <a href="#">
-                <i className="fa fa-thumbs-up"></i> Like (15)
-              </a>
-              <a href="#">
-                <i className="fa fa-comment"></i> Comment (4)
-              </a>
+              {postComments.length > 0 && (
+                <button className="mx-1 btn" onClick={handleToggle}>
+                <i className="fa fa-comment"></i> Comment ({postComments.length})
+              </button>
+              )}
             </div>
-            <Comments />
-            <Comments />
-            <CommentForm />
+            {showComments && (
+              <>
+                {comments.length > 0 && (
+                  <>
+                    {postComments.map(comment => <Comments data={comment} comments={comments} setComments={setComments}/>)}
+                  </>
+                )}
+              </>
+            )}
+            <CommentForm data={props} setComments={setComments}/>
           </div>
         </div>
       </div>

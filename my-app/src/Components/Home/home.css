@@ -2,6 +2,17 @@ body {
     background:#eee;
     margin-top: 20px;
 }
+.dropdown {
+    background-color: none;
+    display: flex;
+    justify-content: end;
+}
+.timelineHeader {
+    display: flex;
+}
+.dropdown-toggle::after {
+    content: none;
+}
 .postButton {
     float:right
 }

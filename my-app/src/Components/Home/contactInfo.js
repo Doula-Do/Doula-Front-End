@@ -1,5 +1,8 @@
+import AppContext from "../../context/AppContext";
+import { useContext } from "react";
+
 function ContactInfo(props) {
-  // const user = props.obj;
+const {user} = useContext(AppContext);
 
   return (
     <div className="card-body">
@@ -7,8 +10,8 @@ function ContactInfo(props) {
         <table className="table table-borderless mb-0 text-muted">
           <tbody>
             <tr>
-              <th scope="row">Email:</th>
-              {/* <td>{user.email}</td> */}
+              <th scope="row">Email: </th>
+              <td>{user.email}</td>
             </tr>
             <tr>
               <th scope="row">Phone:</th>

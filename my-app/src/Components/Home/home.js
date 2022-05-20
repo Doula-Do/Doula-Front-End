@@ -63,7 +63,6 @@ function Home() {
                     {posts.length > 0 && 
                       posts.map((data) => <Post p={data}/>)
                     }
-                    
                   </ul>
                 </div>
               </div>

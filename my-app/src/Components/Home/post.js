@@ -4,10 +4,19 @@ import Dropdown from './dropdown';
 import { DateTime } from "luxon";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
+import { useEffect, useState } from "react";
 
 function Post(props) {
-  const {user} = useContext(AppContext);
+  const [showComments, setShowComments] = useState(true);
+
+  const {user, comments, setComments} = useContext(AppContext);
   const post = props.p;
+  const postComments = comments.filter(comment => post.id === comment.post_id);
+
+  function handleToggle() {
+    setShowComments(!showComments);
+  };
+
   return (
     <li className="timeline-item">
       <div className="card card-white grid-margin">
@@ -31,12 +40,22 @@ function Post(props) {
           <div className="timeline-item-post">
             <p>{post.content}</p>
             <div className="timeline-options">
-              <a href="#">
-                <i className="fa fa-comment"></i> Comment (4)
-              </a>
+              {postComments.length > 0 && (
+                <button className="mx-1 btn" onClick={handleToggle}>
+                <i className="fa fa-comment"></i> Comment ({postComments.length})
+              </button>
+              )}
             </div>
-            <Comments />
-            <CommentForm />
+            {showComments && (
+              <>
+                {comments.length > 0 && (
+                  <>
+                    {postComments.map(comment => <Comments data={comment} comments={comments} setComments={setComments}/>)}
+                  </>
+                )}
+                <CommentForm data={props} setComments={setComments}/>
+              </>
+            )}
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppContext from "./AppContext";
 
 const ContextProvider = (props) => {
@@ -6,6 +6,14 @@ const ContextProvider = (props) => {
   const [posts, setPosts] = useState([]);
   const [postInput, setpostInput] = useState("");
   const [currInput, setcurrInput] = useState("");
+  const [comments, setComments] = useState([]);
+  
+  useEffect(() => {
+    fetch(`http://localhost:8000/comments`)
+    .then(response => response.json())
+    .then(data => setComments(data))
+  }, []);
+
   const context = {
     user,
     setUser,
@@ -14,7 +22,9 @@ const ContextProvider = (props) => {
     postInput,
     setpostInput,
     currInput,
-    setcurrInput
+    setcurrInput,
+    comments,
+    setComments
   };
 
   return (

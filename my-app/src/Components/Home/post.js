@@ -53,7 +53,6 @@ function Post(props) {
                     {postComments.map(comment => <Comments data={comment} comments={comments} setComments={setComments}/>)}
                   </>
                 )}
-                {/* <CommentForm data={props} setComments={setComments}/> */}
               </>
             )}
             <CommentForm data={props} setComments={setComments}/>

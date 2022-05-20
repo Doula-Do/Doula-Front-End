@@ -8,7 +8,7 @@ import Post from "./post";
 import ExtraInfo from "./extraInfo";
 import "./home.css";
 import { useEffect } from "react";
-import AppContext from "../../context/AppContext";
+import AppContext from "../../Context/AppContext";
 import {useContext} from 'react';
 
 function Home() {

@@ -43,7 +43,7 @@ function SignIn() {
 			</form>
 			<p className="forgot" align="center">Forgot Password?</p>  
 			<p className="notenrolled" align="center">Not Enrolled? Sign Up Now.</p>    
-			<button type="submit" className="doulasignup" align="center">Doula Sign Up</button><br/><br/>
+			<button type="submit" className="doulasignup" align="center"><Link to="/DoulaSignUp">Doula Sign Up</Link></button><br/><br/>
 			<button  type="submit" className="familysignup" align="center"> <Link to="/FamilySignUp">Family Sign Up</Link></button>          
     </div>
 	)

@@ -7,6 +7,14 @@ const ContextProvider = (props) => {
   const [postInput, setpostInput] = useState("");
   const [currInput, setcurrInput] = useState("");
   const [comments, setComments] = useState([]);
+  const [first_name, setfirst_Name ] = useState("")
+const [ last_name, setlast_Name ] = useState("")
+const [ email, setuserEmail] = useState("")
+const [contactNumber, setcontactNumber] = useState("")
+const [medicaid, setMedicaid] = useState("")
+const [password, setconfirmPassword] = useState("")
+const [gender, setgenderWm] = useState("")
+
   
   useEffect(() => {
     fetch(`http://localhost:8000/comments`)
@@ -24,7 +32,22 @@ const ContextProvider = (props) => {
     currInput,
     setcurrInput,
     comments,
-    setComments
+    setComments,
+    first_name, 
+    setfirst_Name, 
+    last_name, 
+    setlast_Name, 
+    email, 
+    setuserEmail, 
+    password, 
+    setconfirmPassword,
+    contactNumber, 
+    setcontactNumber, 
+    medicaid, 
+    setMedicaid,
+    gender, 
+    setgenderWm
+
   };
 
   return (

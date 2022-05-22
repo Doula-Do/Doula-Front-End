@@ -80,7 +80,7 @@ function Dropdown(props) {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                Modal title
+                Edit Post
               </h5>
               <button
                 type="button"

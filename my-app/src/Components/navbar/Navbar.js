@@ -21,7 +21,7 @@ function Navbar() {
         <div className="navLinkHolder">
           <h5 className="m-3">Our Mission</h5>
           <h5 className="m-3"><Link className="pageLinks" to="/findclinic">Find a Clinic</Link></h5>
-          <h5 className="m-3"><Link className="pageLinks" to="/impacts">Testimonials</Link></h5>
+          <h5 className="m-3"><Link className="pageLinks" to="/testimonials">Testimonials</Link></h5>
         </div>
       </div>
     </nav>

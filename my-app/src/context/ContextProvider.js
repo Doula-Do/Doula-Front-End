@@ -15,7 +15,12 @@ const ContextProvider = (props) => {
   const [password, setconfirmPassword] = useState("")
   const [gender, setgenderWm] = useState("")
 
-  
+  useEffect(() => {
+    fetch("http://localhost:8000/posts")
+    .then(response => response.json())
+    .then(data => setPosts(data.data))
+  },[])
+
   useEffect(() => {
     fetch(`http://localhost:8000/comments`)
     .then(response => response.json())

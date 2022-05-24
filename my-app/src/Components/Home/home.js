@@ -15,12 +15,6 @@ import ConnectedDoulas from "./doulasConnected";
 function Home() {
   const {posts, setPosts, user} = useContext(AppContext);
 
-  useEffect(() => {
-    fetch("http://localhost:8000/posts")
-    .then(response => response.json())
-    .then(data => setPosts(data.data))
-  },[])
-
   return (
     <div>
       <Navbar />

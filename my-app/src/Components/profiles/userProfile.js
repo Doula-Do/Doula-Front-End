@@ -6,13 +6,13 @@ import "../Home/home.css";
 import AppContext from "../../context/AppContext";
 import { useContext } from "react";
 import ConnectedDoulas from "../Home/doulasConnected";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProfileForm from "./profileForm";
 import './profile.css';
 
 function UserProfile() {
-  const { user, posts} = useContext(AppContext);
+  const { user } = useContext(AppContext);
   const [profileUser, setprofileUser] = useState({});
   const [profilePosts, setprofilePosts] = useState([]);
   const { id } = useParams();

@@ -3,6 +3,8 @@ import { useContext } from "react";
 
 function Dropdown(props) {
   const { posts, setPosts, currInput, setcurrInput } = useContext(AppContext);
+  console.log(posts);
+
   function handleDelete() {
     const postId = props.postid;
     async function deleteAPost(id) {
@@ -31,16 +33,16 @@ function Dropdown(props) {
         })
       });
       const data = await response.json();
-      const updatedContent = data.content;
       const foundPost = posts.findIndex(post => post.id === +id);
-      posts[foundPost].content = updatedContent;
+      posts[foundPost].content = currInput;
       setPosts([...posts]);
       const proFoundPost = props.profilePosts.findIndex(post => post.id === +id);
-      props.profilePosts[proFoundPost].content = updatedContent;
+      props.profilePosts[proFoundPost].content = currInput;
       props.setprofilePosts([...props.profilePosts]);
     }
     
     updateAPost(postId);
+    setcurrInput("");
   }
 
   return (

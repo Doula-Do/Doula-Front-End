@@ -2,7 +2,7 @@ import {useState, useContext} from 'react';
 import "./SignUpApplication.css"
 import { Button,Form, FormGroup, Label, Input,FormText} from 'reactstrap';
 import AppContext from '../../context/AppContext'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 function FamilySignUp (){
@@ -45,7 +45,7 @@ function handleSubmit(event) {
     </h1>
   </FormGroup>
   <FormGroup>
-    <Label for="FirstName">
+    <Label >
       First Name:
     </Label>
     <Input
@@ -60,7 +60,7 @@ function handleSubmit(event) {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="LastName">
+    <Label >
       Last Name:
     </Label>
     <Input
@@ -75,7 +75,7 @@ function handleSubmit(event) {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="Email">
+    <Label >
       Email:
     </Label>
     <Input
@@ -90,7 +90,7 @@ function handleSubmit(event) {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="PartnerFirstName">
+    <Label >
       Partner First Name (Optional):
     </Label>
     <Input
@@ -105,7 +105,7 @@ function handleSubmit(event) {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="PartnerLastName">
+    <Label >
       Partner Last Name (Optional):
     </Label>
     <Input
@@ -120,7 +120,7 @@ function handleSubmit(event) {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="EnterPassword">
+    <Label >
       Enter Password:
     </Label>
     <Input
@@ -134,7 +134,7 @@ function handleSubmit(event) {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="ConfirmPassword">
+    <Label >
       Confirm Password:
     </Label>
     <Input
@@ -148,7 +148,7 @@ function handleSubmit(event) {
     />
   </FormGroup>
   <FormGroup>
-    <Label for="GenderSelect">
+    <Label >
       Gender:
     </Label>
     <Input
@@ -168,7 +168,7 @@ function handleSubmit(event) {
     </Input>
   </FormGroup>
   <FormGroup>
-    <Label for="medicaidSelect">
+    <Label >
      Do you have medicaid?
     </Label>
     <Input
@@ -208,7 +208,7 @@ function handleSubmit(event) {
     </Input>
   </FormGroup> */}
   <FormGroup>
-    <Label for="ContactNumber">
+    <Label >
       Contact Number:
     </Label>
     <Input
@@ -250,7 +250,7 @@ function handleSubmit(event) {
     />
   </FormGroup> */}
     <FormText>
-     You are almost Done, one more page to fill out!
+     You're All Done!
     </FormText>
   <Button className="FamilyButton" onClick={handleSubmit}type="submit">Submit</ Button>
   

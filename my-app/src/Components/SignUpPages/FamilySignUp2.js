@@ -4,7 +4,7 @@ import { Button,Form, FormGroup, Label, Input,FormText} from 'reactstrap';
 import AppContext from '../../context/AppContext'
 import { Link } from 'react-router-dom'
 
-function FamilySignUpTwo () {
+function FamilySignUpTwo (props) {
   const {interesteduserSelect, setinteresteduserSelect, preferenceusertextArea, setpreferenceusertextArea, dueDate, setdueDate,genderbabySelect, setgenderbabySelect,firstbabySelect, setfirstbabySelect} = useContext(AppContext)
   
   

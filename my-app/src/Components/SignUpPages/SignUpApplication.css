@@ -29,4 +29,28 @@
     color: black;
   }
 
+  label::before {
+    content: ' \f00c';
+    position: absolute;
+    font-family: FontAwesome;
+    background: transparent;
+    
+    color: transparent;
+    left: -30px;
+    transition: all 0.2s linear;
+    border: 3px solid black
+  }
+
+  label::after {
+    content: ' \f00c';
+    position: absolute;
+    font-family: FontAwesome;
+    background: paleturquoise;
+   
+    color: paleturquoise;
+    left: -30px;
+    transition: all 0.2s linear;
+    border: 3px solid black
+  }
+
   

@@ -8,7 +8,7 @@ import Impacts from "./ImpactsPage/Impacts";
 import FamilySignUp from "./SignUpPages/FamilySignUp.js";
 import Home from "./Home/home.js";
 import DoulaSignUp from "./SignUpPages/DoulaSignUp";
-import FamilySignUpTwo from "./SignUpPages/FamilySignUp2";
+// import FamilySignUpTwo from "./SignUpPages/FamilySignUp2";
 import UserProfile from "./profiles/userProfile";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/testimonials" element={<Impacts />} />
         <Route path="/FamilySignUp" element={<FamilySignUp />} />
-        <Route path="/FamilySignUpTwo" element={<FamilySignUpTwo />} /> 
+        {/* <Route path="/FamilySignUpTwo" element={<FamilySignUpTwo />} />  */}
         <Route path="/DoulaSignUp" element={<DoulaSignUp />} />
         <Route path="/user/:id" element={<UserProfile/>} />
       </Routes>

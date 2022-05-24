@@ -16,42 +16,46 @@ const [doulaC, setdoulaC] = useState("")
 const [doulaCs, setdoulaCs] = useState("")
 const [doulaprofileLink, setdoulaprofileLink] = useState("")
 
+const {first_name, setfirst_Name, last_name, setlast_Name, email, setuserEmail, password, setconfirmPassword, contactNumber, setcontactNumber, medicaid, setMedicaid, gender, setgenderWm } = useContext(AppContext)
+
+function handleSubmit(event) {
+  event.preventDefault();
+
+  const data = {
+    first_name,
+    last_name,
+    password,
+    email,
+    gender, 
+    medicaid,
+  };
+
+   fetch('http://localhost:8000/users/:id', {
+     method: 'POST',
+     headers: { "Content-Type" : "application/json" },
+     body: JSON.stringify(data)
+   }).then(() => {
+     console.log('new post added')
+   })
+}
 
 
-
-const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doulaemail, doulasetEmail,confirmdoulaPassword, setconfirmdoulaPassword, medicaidDoula, setmedicaidDoula, doulaSkills, setdoulaSkills, doulacontactNumber,setdoulacontactNumber ,doulatype, setdoulatype,doulaexperience, setdoulaexperience, doulabirthday, setdoulabirthday} = useContext(AppContext)
-
-// function onSubmit() => {
-//   const fetchData = async () => {
-//     const result = await fetch('')
-//     const jsonResult= result.json();
-
-//   }
-// }
-
-// const submitDoulaProfile = async () =>{
-//   // const myData{
-
-//   // }
-
-//   const result = await fetch ('')
-// }
-       
         return (
   <Form className="signUpForm">
+
     <FormGroup>
     <h1>
       Hey Doula!
     </h1>
   </FormGroup>
   <FormGroup>
-    <Label for="FirstName">
+    <Label>
       First Name:
     </Label>
     <Input
-     value={doulafirstName}
+     value={first_name}
      onChange={(event)=>{
-       doulasetfirstName(event.target.value)
+      setfirst_Name(event.target.value)
      }}
       id="FirstName"
       name="FirstName"
@@ -60,13 +64,13 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     />
   </FormGroup>
   <FormGroup>
-    <Label for="LastName">
+    <Label >
       Last Name:
     </Label>
     <Input
-      value={doulalastName}
+      value={last_name}
       onChange={(event)=>{
-        doulasetlastName(event.target.value)
+        setlast_Name(event.target.value)
       }}
       id="LastName"
       name="LastName"
@@ -75,13 +79,33 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     />
   </FormGroup>
   <FormGroup>
-    <Label for="Email">
+    <Label >
+      Gender:
+    </Label>
+    <Input
+    value={gender}
+    onChange={(event)=>{
+      setgenderWm(event.target.value)}}
+      id="GenderSelect"
+      name="select"
+      type="select"
+    >
+      <option>
+        Woman
+      </option>
+      <option>
+        Man
+      </option>
+    </Input>
+  </FormGroup>
+  <FormGroup>
+    <Label >
       Email:
     </Label>
     <Input
-     value={doulaemail}
+     value={email}
      onChange={(event)=>{
-       doulasetEmail(event.target.value)
+      setuserEmail(event.target.value)
      }}
       id="Email"
       name="email"
@@ -91,7 +115,7 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
   </FormGroup>
   
   <FormGroup>
-    <Label for="enterPassword">
+    <Label >
       Enter Password:
     </Label>
     <Input
@@ -106,13 +130,13 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     />
   </FormGroup>
   <FormGroup>
-    <Label for="confirmdoulaPassword">
+    <Label >
       Confirm Password:
     </Label>
     <Input
-     value={confirmdoulaPassword}
+     value={password}
      onChange={(event)=>{
-       setconfirmdoulaPassword(event.target.value)
+      setconfirmPassword(event.target.value)
      }}
       id="confirmdoulaPassword"
       name="password"
@@ -121,7 +145,7 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     />
   </FormGroup>
   <FormGroup>
-    <Label for="doulaLink">
+    <Label >
       Can you share a link to any of your social media profiles? linkedin, facebook, instagram...etc
     </Label>
     <Input
@@ -136,13 +160,13 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     />
   </FormGroup>
   <FormGroup>
-    <Label for="contactNumber">
+    <Label >
       Contact Number
     </Label>
     <Input
-    value={doulacontactNumber}
+    value={contactNumber}
     onChange={(event)=>{
-      setdoulacontactNumber(event.target.value)
+      setcontactNumber(event.target.value)
     }}
       id="contactNumber"
       name="contactNumber"
@@ -150,8 +174,8 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
       type="number"
     />
   </FormGroup>
-  <FormGroup>
-    <Label for="doulaBirth">
+  {/* <FormGroup>
+    <Label >
       Date of Birth:
     </Label>
     <Input
@@ -164,9 +188,9 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
       placeholder="date placeholder"
       type="date"
     />
-  </FormGroup>
-  <FormGroup>
-    <Label for="doulaExperience">
+  </FormGroup> */}
+  {/* <FormGroup>
+    <Label >
       How long have you been a doula?
     </Label>
     <Input
@@ -194,9 +218,9 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
         5
       </option>
     </Input>
-  </FormGroup>
-  <FormGroup>
-    <Label for="doulaType">
+  </FormGroup> */}
+  {/* <FormGroup>
+    <Label>
       What type of Doula are you?
     </Label>
     <Input
@@ -218,9 +242,9 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
         Community-based Doula
       </option>
     </Input>
-  </FormGroup>
+  </FormGroup> */}
   <FormGroup>
-    <Label for="doulaCS">
+    <Label >
       Are you contracted or self-employed?
     </Label>
     <Input
@@ -245,7 +269,7 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
   </FormGroup>
  
       <FormGroup>
-    <Label for="doulaC">
+    <Label >
       If contracted, what organization are you partnered with?
     </Label>
     <Input
@@ -284,7 +308,7 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     </Input>
   </FormGroup>
      <FormGroup>
-    <Label for="certifiedDoula">
+    <Label >
       Are you certified in the state of New York City?
     </Label>
     <Input
@@ -305,7 +329,7 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     </Input>
   </FormGroup>
     <FormGroup>
-    <Label for="doulatrainingFile">
+    <Label >
        Please upload your doula training certificate
     </Label>
     <Input
@@ -319,13 +343,13 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     />
     </FormGroup>
     <FormGroup>
-    <Label for="medicaidDoula">
+    <Label >
       Are you enrolled as a New York State Medicaid Provider?
     </Label>
     <Input
-     value={medicaidDoula}
+     value={medicaid}
      onChange={(event)=>{
-       setmedicaidDoula(event.target.value)
+      setMedicaid(event.target.value)
      }}
       id="medicaidDoula"
       name="select"
@@ -339,8 +363,8 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
       </option>
     </Input>
     </FormGroup>
-  <FormGroup>
-    <Label for="doulaSkills">
+  {/* <FormGroup>
+    <Label >
       What do you specialize in as a Doula?(skills)
     </Label>
     <Input
@@ -348,11 +372,12 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
      onChange={(event)=>{
        setdoulaSkills(event.target.value)
      }}
+  <FormText>
       id="doulaSkills"
       name="text"
       type="textarea"
     />
-    </FormGroup>
+    </FormGroup> */}
     <br>
     </br>
   <FormText>
@@ -360,7 +385,7 @@ const {doulafirstName, doulasetfirstName, doulalastName, doulasetlastName, doula
     </FormText>
     <br>
     </br>
-  <Button className="FamilyButton" type="submit"><Link to="/signin">Submit</Link></ Button>
+  <Button className="FamilyButton" onClick={handleSubmit} type="submit"><Link to="/signin">Submit</Link></ Button>
 </Form>
         )
     }

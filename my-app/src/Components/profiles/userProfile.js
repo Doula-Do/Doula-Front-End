@@ -77,7 +77,7 @@ function UserProfile() {
                     </div>
                     <div className="bio-row">
                       <p>
-                        <span>Number</span>: {profileUser.phone_number}
+                        <span>Number</span>: {profileUser.phone_number.length === 0 && (<>N/A</>)} {profileUser.phone_number.length > 0 && (<>{profileUser.phone_number}</>)}
                       </p>
                     </div>
                     <div className="bio-row">

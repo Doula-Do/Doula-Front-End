@@ -6,7 +6,6 @@ function Dropdown(props) {
 
   function handleDelete() {
     const postId = props.postid;
-
     async function deleteAPost(id) {
       const response = await fetch(`http://localhost:8000/post/${id}`, {
         method: "DELETE",
@@ -101,14 +100,14 @@ function Dropdown(props) {
             <div class="modal-footer">
               <button
                 type="button"
-                class="btn btn-secondary"
+                class="btn btn-secondary modalButton"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
               <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-primary modalButton"
                 data-bs-dismiss="modal"
                 onClick={handleUpdatePost}
               >

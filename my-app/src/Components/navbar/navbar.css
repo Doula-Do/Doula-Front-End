@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #FCF2F2;
+    background-color: #e8ced6;
     color: black;
     margin-top: -20px;
 }
@@ -16,4 +16,8 @@
 .pageLinks {
     text-decoration: none;
     color:black;
+}
+
+.pageLinks:hover {
+    color:white;
 }

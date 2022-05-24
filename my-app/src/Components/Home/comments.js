@@ -6,7 +6,6 @@ import { useContext } from "react";
 function Comments(props) {
   const { user } = useContext(AppContext);
   const userComments = props.data;
-  console.log(userComments)
 
   function handleDeleteComment() {
     const commentId = userComments.id;

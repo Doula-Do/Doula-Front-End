@@ -1,29 +1,13 @@
 import Footer from "../footer/footer";
 import Navbar from "../navbar/Navbar";
 import "./impacts.css";
-import Testimonial from "./testimonial";
 import { useEffect } from "react";
 
 function Impacts() {
-  // useEffect(() => {
-  //   const script = document.createElement('script');
-  //   const script2 = document.createElement('script');
-  //   script.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js";
-  //   script.async = true;
-  //   script2.src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js";
-  //   script2.async = true;
-  //   document.body.appendChild(script);
-  //   document.body.appendChild(script2);
-  // return () => {
-  //     document.body.removeChild(script);
-  //     document.body.appendChild(script2);
-  //   }
-  // }, []);
-
   return (
     <div>
       <Navbar />
-      <div className="testimonials-clean">
+      <div className="testimonials-clean contentBody">
         <div className="container">
           <div className="intro">
             <h2 className="text-center">Testimonials </h2>
@@ -32,7 +16,58 @@ function Impacts() {
               have to say below.
             </p>
           </div>
-          <div className="row people">
+          <div className="carousel slide demo" data-ride="carousel">
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <div className="carousel-caption">
+                  <p>
+                    “You know how they say it takes a village to raise a baby?
+                    Well, one good doula is equal to that whole village!”
+                  </p>
+                  <img src="https://i.imgur.com/lE89Aey.jpg" />
+                  <div className="image-caption">— Emily D.</div>
+                  <p className="title">CEO of Company Inc.</p>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <div className="carousel-caption">
+                  <p>
+                    If Shai Reznik's TDD videos don't convince you to add
+                    automated testing your code, I don't know what will.This was
+                    the very best explanation of frameworks for brginners that
+                    I've ever seen.
+                  </p>
+                  <img
+                    src="https://i.imgur.com/QptVdsp.jpg"
+                    className="img-fluid"
+                  />
+                  <div className="image-caption">Cromption Greves</div>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <div className="carousel-caption">
+                  <p>
+                    If Shai Reznik's TDD videos don't convince you to add
+                    automated testing your code, I don't know what will.This was
+                    the very best explanation of frameworks for brginners that
+                    I've ever seen.
+                  </p>
+                  <img
+                    src="https://i.imgur.com/jQWThIn.jpg"
+                    className="img-fluid"
+                  />
+                  <div className="image-caption">Harry Mon</div>
+                </div>
+              </div>
+            </div>
+            <a className="carousel-control-prev" data-slide="prev">
+              <i className="fas fa-arrow-left"></i>
+            </a>
+            <a className="carousel-control-next" data-slide="next">
+              <i className="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          {/* <div className="row people">
             <Testimonial />
             <Testimonial />
             <Testimonial />
@@ -41,7 +76,7 @@ function Impacts() {
             <Testimonial />
             <Testimonial />
             <Testimonial />
-          </div>
+          </div> */}
         </div>
       </div>
       <Footer />

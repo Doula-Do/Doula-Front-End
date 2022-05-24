@@ -5,13 +5,14 @@ import { DateTime } from "luxon";
 import { useContext } from "react";
 import AppContext from "../../context/AppContext";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Post(props) {
   const [showComments, setShowComments] = useState(false);
-
   const {user, comments, setComments} = useContext(AppContext);
   const post = props.p;
   const postComments = comments.filter(comment => post.id === comment.post_id);
+  const userPostedId = post.user_id;
 
   function handleToggle() {
     setShowComments(!showComments);
@@ -28,7 +29,7 @@ function Post(props) {
                 alt=""
               />
               <p>
-                {post.first_name} {post.last_name}
+                <Link to={`/user/${userPostedId}`}>{post.first_name} {post.last_name}</Link>
                 <br></br>
                 <small>{DateTime.fromISO(post.created_at).toRelative()}</small>
               </p>

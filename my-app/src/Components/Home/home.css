@@ -7,6 +7,29 @@ body {
     display: flex;
     justify-content: end;
 }
+
+.modalButton {
+    border: 2px solid #9bbca9;
+    background-color: white;;
+    color: black
+}
+
+.modalButton:hover {
+    border: 2px solid #9bbca9;
+    background-color: #9bbca9;
+}
+
+.postButton {
+    border: 2px solid #9bbca9;
+    background-color: white;;
+    color: black
+}
+
+.postButton:hover {
+    border: 2px solid #9bbca9;
+    background-color: #9bbca9;
+}
+
 .timelineHeader {
     display: flex;
 }
@@ -23,7 +46,7 @@ body {
     position: relative;
     min-height: calc(100% - 56px);
     padding: 20px 30px 40px 30px;
-    background: #f3f4f7;
+    /* background: #f3f4f7; */
 }
 .card.card-white {
     background-color: #fff;

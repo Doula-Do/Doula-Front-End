@@ -9,9 +9,9 @@ function FamilySignUp (){
 const [enterPassword, setenterPassword] = useState("")
 const [partnerfirstName, setpartnerfirstName] = useState("")
 const [partnerlastName, setpartnerlastName] = useState("")
-const [familyZipcode, setfamilyZipcode] = useState("")
-const [birthday, setBirthday] = useState("")
-const [doulaYn, setdoulaYn] = useState("")
+// const [familyZipcode, setfamilyZipcode] = useState("")
+// const [birthday, setBirthday] = useState("")
+// const [doulaYn, setdoulaYn] = useState("")
 const {first_name, setfirst_Name, last_name, setlast_Name, email, setuserEmail, password, setconfirmPassword, contactNumber, setcontactNumber, medicaid, setMedicaid, gender, setgenderWm } = useContext(AppContext)
 
 function handleSubmit(event) {
@@ -187,7 +187,7 @@ function handleSubmit(event) {
       </option>
     </Input>
   </FormGroup>
-  <FormGroup>
+  {/* <FormGroup>
     <Label for="DoulaYN">
     Do you have a Doula?
     </Label>
@@ -206,7 +206,7 @@ function handleSubmit(event) {
          No
       </option>
     </Input>
-  </FormGroup>
+  </FormGroup> */}
   <FormGroup>
     <Label for="ContactNumber">
       Contact Number:
@@ -221,7 +221,7 @@ function handleSubmit(event) {
       type="number"
     />
   </FormGroup>
-  <FormGroup>
+  {/* <FormGroup>
     <Label for="BirthdayDate">
       Date of Birth:
     </Label>
@@ -234,8 +234,8 @@ function handleSubmit(event) {
       placeholder="date placeholder"
       type="date"
     />
-  </FormGroup>
-  <FormGroup>
+  </FormGroup> */}
+  {/* <FormGroup>
     <Label for="FamilyZipCode">
     ZipCode:
     </Label>
@@ -248,11 +248,11 @@ function handleSubmit(event) {
       placeholder="FamilyZipCode"
       type="FamilyZipCode"
     />
-  </FormGroup>
+  </FormGroup> */}
     <FormText>
      You are almost Done, one more page to fill out!
     </FormText>
-  <Button className="FamilyButton" onClick={handleSubmit}type="submit"><Link to="/FamilySignUpTwo">Next</Link></ Button>
+  <Button className="FamilyButton" onClick={handleSubmit}type="submit">Submit</ Button>
   
 </Form>
         )

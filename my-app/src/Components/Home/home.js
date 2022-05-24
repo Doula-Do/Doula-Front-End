@@ -1,12 +1,9 @@
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/footer";
 import Menu from "./menu";
-import About from "./about";
-import ContactInfo from "./contactInfo";
 import PostForm from "./postForm";
 import Post from "./post";
 import "./home.css";
-import { useEffect } from "react";
 import AppContext from "../../context/AppContext";
 import {useContext} from 'react';
 import ConnectedDoulas from "./doulasConnected";

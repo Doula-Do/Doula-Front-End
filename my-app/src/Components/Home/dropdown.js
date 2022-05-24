@@ -3,7 +3,6 @@ import { useContext } from "react";
 
 function Dropdown(props) {
   const { posts, setPosts, currInput, setcurrInput } = useContext(AppContext);
-  console.log(posts);
 
   function handleDelete() {
     const postId = props.postid;

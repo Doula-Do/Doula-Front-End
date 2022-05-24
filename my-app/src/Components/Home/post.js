@@ -33,7 +33,7 @@ function Post(props) {
               <pre>
                 <Link to={`/user/${userPostedId}`}>
                   <p>                 
-                    {post.first_name} {post.last_name}
+                    {post.first_name} {post.last_name} {post.is_doula && (<>&#10004;</>)}
                   </p>
                 </Link>
                 <small>{DateTime.fromISO(post.created_at).toRelative()}</small>

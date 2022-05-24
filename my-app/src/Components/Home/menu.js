@@ -8,9 +8,12 @@ function Menu(props) {
   const userId = user.id;
   return (
     <div className="card-body user-profile-card mb-3">
+      <br></br>
       <Link to={'/'}><button className="btn w-50 mx-auto fw-bold modalButton">Home</button></Link>
       <br></br>
       <Link to={`/user/${userId}`}><button className="btn w-50 mx-auto fw-bold modalButton my-3">Profile</button></Link>
+      <br></br>
+      <button className="btn w-50 mx-auto fw-bold modalButton">Messages</button>
     </div>
   );
 }

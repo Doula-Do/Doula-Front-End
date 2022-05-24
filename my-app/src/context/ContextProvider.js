@@ -8,12 +8,12 @@ const ContextProvider = (props) => {
   const [currInput, setcurrInput] = useState("");
   const [comments, setComments] = useState([]);
   const [first_name, setfirst_Name ] = useState("")
-const [ last_name, setlast_Name ] = useState("")
-const [ email, setuserEmail] = useState("")
-const [contactNumber, setcontactNumber] = useState("")
-const [medicaid, setMedicaid] = useState("")
-const [password, setconfirmPassword] = useState("")
-const [gender, setgenderWm] = useState("")
+  const [ last_name, setlast_Name ] = useState("")
+  const [ email, setuserEmail] = useState("")
+  const [contactNumber, setcontactNumber] = useState("")
+  const [medicaid, setMedicaid] = useState("")
+  const [password, setconfirmPassword] = useState("")
+  const [gender, setgenderWm] = useState("")
 
   
   useEffect(() => {
@@ -46,8 +46,7 @@ const [gender, setgenderWm] = useState("")
     medicaid, 
     setMedicaid,
     gender, 
-    setgenderWm
-
+    setgenderWm,
   };
 
   return (

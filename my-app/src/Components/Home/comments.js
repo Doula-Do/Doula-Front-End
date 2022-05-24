@@ -29,7 +29,7 @@ function Comments(props) {
           alt=""
         />
         <p>
-          {userComments.first_name} {userComments.last_name} {" "}
+          {userComments.first_name} {userComments.last_name} {userComments.is_doula && (<>&#10004;</>)} {" "}
           <small>
             {DateTime.fromISO(userComments.created_at).toRelative()}
           </small>

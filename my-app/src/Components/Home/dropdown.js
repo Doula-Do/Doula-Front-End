@@ -3,7 +3,6 @@ import { useContext } from "react";
 
 function Dropdown(props) {
   const { posts, setPosts, currInput, setcurrInput } = useContext(AppContext);
-
   function handleDelete() {
     const postId = props.postid;
     async function deleteAPost(id) {
@@ -17,6 +16,8 @@ function Dropdown(props) {
     deleteAPost(postId);
     const newPostFeed = posts.filter((post) => post.id !== +postId);
     setPosts([...newPostFeed]);
+    const deletedPostFeed = props.profilePosts.filter(post => post.id !== +postId);
+    props.setprofilePosts([...deletedPostFeed]);
   }
 
   function handleUpdatePost() {
@@ -31,9 +32,12 @@ function Dropdown(props) {
       });
       const data = await response.json();
       const updatedContent = data.content;
-      const foundPost = posts.findIndex(post => post.id === id);
+      const foundPost = posts.findIndex(post => post.id === +id);
       posts[foundPost].content = updatedContent;
       setPosts([...posts]);
+      const proFoundPost = props.profilePosts.findIndex(post => post.id === +id);
+      props.profilePosts[proFoundPost].content = updatedContent;
+      props.setprofilePosts([...props.profilePosts]);
     }
     
     updateAPost(postId);

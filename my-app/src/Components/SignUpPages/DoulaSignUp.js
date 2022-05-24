@@ -10,11 +10,11 @@ import { Button,Form, FormGroup, Label, Input, FormText} from 'reactstrap';
 function DoulaSignUp () {
 
 const [enterdoulaPassword, setenterdoulaPassword] = useState("")
-const [doulaTraining, setdoulaTraining] = useState("")
-const [certifiedDoula, setcertifiedDoula] = useState("")
-const [doulaC, setdoulaC] = useState("")
-const [doulaCs, setdoulaCs] = useState("")
-const [doulaprofileLink, setdoulaprofileLink] = useState("")
+// const [doulaTraining, setdoulaTraining] = useState("")
+// const [certifiedDoula, setcertifiedDoula] = useState("")
+// const [doulaC, setdoulaC] = useState("")
+// const [doulaCs, setdoulaCs] = useState("")
+// const [doulaprofileLink, setdoulaprofileLink] = useState("")
 
 const {first_name, setfirst_Name, last_name, setlast_Name, email, setuserEmail, password, setconfirmPassword, contactNumber, setcontactNumber, medicaid, setMedicaid, gender, setgenderWm } = useContext(AppContext)
 
@@ -144,7 +144,7 @@ function handleSubmit(event) {
       type="password"
     />
   </FormGroup>
-  <FormGroup>
+  {/* <FormGroup>
     <Label >
       Can you share a link to any of your social media profiles? linkedin, facebook, instagram...etc
     </Label>
@@ -158,7 +158,7 @@ function handleSubmit(event) {
       placeholder="url placeholder"
       type="url"
     />
-  </FormGroup>
+  </FormGroup> */}
   <FormGroup>
     <Label >
       Contact Number
@@ -243,7 +243,7 @@ function handleSubmit(event) {
       </option>
     </Input>
   </FormGroup> */}
-  <FormGroup>
+  {/* <FormGroup>
     <Label >
       Are you contracted or self-employed?
     </Label>
@@ -266,9 +266,9 @@ function handleSubmit(event) {
         Both
       </option>
     </Input>
-  </FormGroup>
+  </FormGroup> */}
  
-      <FormGroup>
+      {/* <FormGroup>
     <Label >
       If contracted, what organization are you partnered with?
     </Label>
@@ -306,8 +306,8 @@ function handleSubmit(event) {
         Community Health Center of Richmond
       </option>
     </Input>
-  </FormGroup>
-     <FormGroup>
+  </FormGroup> */}
+     {/* <FormGroup>
     <Label >
       Are you certified in the state of New York City?
     </Label>
@@ -327,8 +327,8 @@ function handleSubmit(event) {
         No
       </option>
     </Input>
-  </FormGroup>
-    <FormGroup>
+  </FormGroup> */}
+    {/* <FormGroup>
     <Label >
        Please upload your doula training certificate
     </Label>
@@ -341,7 +341,7 @@ function handleSubmit(event) {
       name="file"
       type="file"
     />
-    </FormGroup>
+    </FormGroup> */}
     <FormGroup>
     <Label >
       Are you enrolled as a New York State Medicaid Provider?

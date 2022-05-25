@@ -6,18 +6,19 @@ import "../Home/home.css";
 import AppContext from "../../context/AppContext";
 import { useContext } from "react";
 import ConnectedDoulas from "../Home/doulasConnected";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import ProfileForm from "./profileForm";
 import "./profile.css";
 
 function UserProfile() {
-  const { user } = useContext(AppContext);
+  const { user, isAuth } = useContext(AppContext);
   const [profileUser, setprofileUser] = useState({});
   const [profilePosts, setprofilePosts] = useState([]);
   const { id } = useParams();
-
+  console.log(user.id === +id)
   useEffect(() => {
+    if (!user.id) return
     fetch(`http://localhost:8000/user/${id}`)
       .then((response) => response.json())
       .then((data) => setprofileUser({ ...data[0] }));
@@ -29,7 +30,7 @@ function UserProfile() {
       );
   }, [id]);
 
-  return (
+  return !isAuth ? <Navigate to="/" /> : (
     <div>
       <Navbar />
       <div className="page-inner no-page-title pageContainer">
@@ -107,7 +108,7 @@ function UserProfile() {
                   </div>
                 </div>
               </div>
-              {user.id === +id && (
+              {user.id === id && (
                 <>
                   <div className="card card-white grid-margin">
                     <div className="card-body">

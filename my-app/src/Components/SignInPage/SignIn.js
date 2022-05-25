@@ -1,50 +1,50 @@
-import "./signin.css"; 
-import { Link } from 'react-router-dom'
-import {useState} from 'react'
+import "./signin.css";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import pregnantMom from './pregnantMother.webp'
-function SignIn() {
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import AppContext from "../../context/AppContext";
-import {useContext} from 'react';
-function SignIn({setAuth}) {
+import { useContext } from "react";
+function SignIn() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { setUser, auth, isAuth, setIsAuth } = useContext(AppContext);
+  const navigate = useNavigate();
 
-  const [email ,setEmail] = useState("")
-	const [password, setPassword] = useState("")
-	const {setUser} = useContext(AppContext);
-	const navigate = useNavigate();
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    const loginData = {
+      email,
+      password,
+    };
+    async function loginUser() {
+      const res = await fetch(`http://localhost:8000/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginData),
+      });
+      const data = await res.json();
+      if (!data.token) {
+        setIsAuth(false);
+        return;
+      }
+      window.localStorage.setItem("token", data.token);
+      window.localStorage.setItem("id", data.user.id);
+	  
+      setIsAuth(true);
+      setUser(data.user);
+	  navigate('/home');
+    }
+    loginUser();
 
-	const onFormSubmit = async (e) => {
-		e.preventDefault()
-		const loginData = {
-			email,
-			password,
-		  };
-
-		  const res = await fetch(`http://localhost:8000/login`, {
-			method: "POST",
-			headers: {
-			  "Content-Type": "application/json",
-			},
-			body: JSON.stringify(loginData),
-		  });
-		  const data = await res.json();
-		  console.log(data.user);
-		  if (data.token) {
-			window.localStorage.setItem("token", data.token);
-			setAuth(true);
-		  } else {
-			setAuth(false);
-		  }
-		  if (data.rows.length > 1) {
-			navigate("/", { replace: true });
-			// setUser(data.user);
-		  }
-		  setEmail("");
-		  setPassword("");
-
+    setEmail("");
+    setPassword("");
+  };
 };
 
-    return (
+    return isAuth ? <Navigate to="/home" /> : (
 		<div className="main">
       {/* <img class= "image" alt="" src= {pregnantMom} />  */}
       <p className="doulado" align="center">Welcome to DoulaDo!</p>
@@ -60,8 +60,7 @@ function SignIn({setAuth}) {
 			<button type="submit" className="doulasignup" align="center"><Link to="/DoulaSignUp">Doula Sign Up</Link></button><br/><br/>
 			<button  type="submit" className="familysignup" align="center"> <Link to="/FamilySignUp">Family Sign Up</Link></button>          
     </div>
-	)
+  );
 }
-
 
 export default SignIn;

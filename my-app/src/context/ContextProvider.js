@@ -14,6 +14,33 @@ const ContextProvider = (props) => {
   const [medicaid, setMedicaid] = useState("")
   const [password, setconfirmPassword] = useState("")
   const [gender, setgenderWm] = useState("")
+  const [isAuth, setIsAuth] = useState(false);
+
+
+
+  useEffect(() => {
+    const userToken = window.localStorage.getItem("token");
+    if (!userToken) return
+    async function checkAuth() {
+      const response = await fetch('http://localhost:8000/authenticate', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({userToken})
+      })
+
+      const data = await response.json();
+      console.log(data);
+      if(data.isAuth) {
+        setIsAuth(true);
+      }
+      setUser({id: window.localStorage.getItem('id')})
+      
+    }
+    
+    checkAuth();
+  },[])
 
   useEffect(() => {
     fetch("http://localhost:8000/posts")
@@ -52,6 +79,8 @@ const ContextProvider = (props) => {
     setMedicaid,
     gender, 
     setgenderWm,
+    isAuth,
+    setIsAuth
   };
 
   return (

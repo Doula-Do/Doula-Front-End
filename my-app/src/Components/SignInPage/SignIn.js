@@ -1,6 +1,7 @@
 import "./signin.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import pregnantMom from './pregnantMother.webp'
 import { useNavigate, Navigate } from "react-router-dom";
 import AppContext from "../../context/AppContext";
 import { useContext } from "react";
@@ -41,55 +42,23 @@ function SignIn() {
     setEmail("");
     setPassword("");
   };
+};
 
-  return isAuth ? <Navigate to="/home" /> :(
-    <div className="main">
-      <p className="sign" align="center">
-        Sign in
-      </p>
-      <form className="form1" onSubmit={onFormSubmit}>
-        {/* <input class="un " type="text" align="center" placeholder="Username"/> */}
-        <input
-          className="un "
-          type="text"
-          autoComplete="username"
-          align="center"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-        />
-        <input
-          className="pass"
-          type="password"
-          autoComplete="current-password"
-          align="center"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-        />
-        <button type="submit" className="submit" align="center">
-          Sign in
-        </button>
-      </form>
-      <p className="forgot" align="center">
-        Forgot Password?
-      </p>
-      <p className="notenrolled" align="center">
-        Not Enrolled? Sign Up Now.
-      </p>
-      <button type="submit" className="doulasignup" align="center">
-        <Link to="/DoulaSignUp">Doula Sign Up</Link>
-      </button>
-      <br />
-      <br />
-      <button type="submit" className="familysignup" align="center">
-        {" "}
-        <Link to="/FamilySignUp">Family Sign Up</Link>
-      </button>
+    return isAuth ? <Navigate to="/home" /> : (
+		<div className="main">
+      {/* <img class= "image" alt="" src= {pregnantMom} />  */}
+      <p className="doulado" align="center">Welcome to DoulaDo!</p>
+			<p className="sign" align="center">Sign in!</p>
+			<form className="form1">
+			{/* <input class="un " type="text" align="center" placeholder="Username"/> */}
+			<input className="un " type="text" autoComplete="username" align="center" placeholder="Email" value={email} onChange={(e)=> {setEmail(e.target.value);} }/>
+			<input className="pass" type="password"  autoComplete="current-password" align="center" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value)}}/>
+			<button onClick={onFormSubmit} type="submit" className="submit" align="center">Sign in</button>
+			</form>
+			<p className="forgot" align="center">Forgot Password?</p>  
+			<p className="notenrolled" align="center">Not Enrolled? Sign Up Now.</p>    
+			<button type="submit" className="doulasignup" align="center"><Link to="/DoulaSignUp">Doula Sign Up</Link></button><br/><br/>
+			<button  type="submit" className="familysignup" align="center"> <Link to="/FamilySignUp">Family Sign Up</Link></button>          
     </div>
   );
 }

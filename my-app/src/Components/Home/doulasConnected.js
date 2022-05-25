@@ -5,7 +5,6 @@ import AppContext from "../../context/AppContext";
 function ConnectedDoulas() {
   const {user} = useContext(AppContext);
   const [users, setUsers] = useState([]);
-  console.log(user)
   useEffect(() => {
     fetch('http://localhost:8000/users')
     .then(response => response.json())

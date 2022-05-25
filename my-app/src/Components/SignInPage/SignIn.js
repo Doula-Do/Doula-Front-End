@@ -34,7 +34,7 @@ function SignIn() {
 	  
       setIsAuth(true);
       setUser(data.user);
-	  navigate('/home');
+	    navigate('/home');
     }
     loginUser();
 

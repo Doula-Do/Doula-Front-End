@@ -39,7 +39,7 @@ function Post(props) {
                 <small>{DateTime.fromISO(post.created_at).toRelative()}</small>
               </pre>
             </div>
-            {user.id === post.user_id && <Dropdown postid={post.id} profileId={props.profileId} profilePosts={props.profilePosts} setprofilePosts={props.setprofilePosts} />}
+            {+user.id === +post.user_id && <Dropdown postid={post.id} profileId={props.profileId} profilePosts={props.profilePosts} setprofilePosts={props.setprofilePosts} />}
           </div>
           <div className="timeline-item-post">
             <p>{post.content}</p>

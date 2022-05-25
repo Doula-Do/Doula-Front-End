@@ -17,11 +17,11 @@ function Dropdown(props) {
     deleteAPost(postId);
     const newPostFeed = posts.filter((post) => post.id !== +postId);
     setPosts([...newPostFeed]);
-    const deletedPostFeed = props.profilePosts.filter(post => post.id !== +postId);
-    props.setprofilePosts([...deletedPostFeed]);
+    // const deletedPostFeed = props.profilePosts.filter(post => post.id !== +postId);
+    // props.setprofilePosts([...deletedPostFeed]);
   }
 
-  async function handleUpdatePost() {
+  function handleUpdatePost() {
     const postId = props.postid;
     async function updateAPost(id) {
       const response = await fetch(`http://localhost:8000/post/${id}`, {
@@ -32,15 +32,17 @@ function Dropdown(props) {
         })
       });
       const data = await response.json();
-      const foundPost = props.profilePosts.findIndex(post => post.id === +id);
-      props.profilePosts[foundPost].content = currInput;
+      const foundPost = posts.findIndex(post => post.id === +id);
+      posts[foundPost].content = data.content;
+      // const foundPost = props.profilePosts.findIndex(post => post.id === +id);
+      // props.profilePosts[foundPost].content = currInput;
       setPosts([...posts]);
     }
     
-    await updateAPost(postId);
-    fetch("http://localhost:8000/posts")
-    .then(response => response.json())
-    .then(data => setPosts(data.data))
+    updateAPost(postId);
+    // fetch("http://localhost:8000/posts")
+    // .then(response => response.json())
+    // .then(data => setPosts(data.data))
     setcurrInput("");
   }
 

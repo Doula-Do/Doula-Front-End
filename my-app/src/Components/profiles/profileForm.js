@@ -8,7 +8,7 @@ function ProfileForm(props) {
     setpostInput(e.target.value);
   }
 
-  function handlePost(e) {
+  async function handlePost(e) {
     e.preventDefault()
     async function createNewPost() {
       const response = await fetch('http://localhost:8000/post', {
@@ -22,9 +22,12 @@ function ProfileForm(props) {
      const data = await response.json();
      data.post[0].first_name = user.first_name;
      data.post[0].last_name = user.last_name;
-     props.setprofilePosts([data.post[0], ...props.profilePosts]);
+    //  props.setprofilePosts([data.post[0], ...props.profilePosts]);
     }
-    createNewPost();
+    await createNewPost();
+    fetch("http://localhost:8000/posts")
+    .then(response => response.json())
+    .then(data => props.setprofilePosts(data.data.filter(post => post.user_id === user.id)))
     setpostInput("");
   }
 

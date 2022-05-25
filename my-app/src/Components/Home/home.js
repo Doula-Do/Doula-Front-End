@@ -12,6 +12,7 @@ import {Navigate} from 'react-router-dom'
 
 function Home() {
   const {posts, setPosts, user, isAuth} = useContext(AppContext);
+  
   return !isAuth ? <Navigate to="/" /> : (
     <div>
       <Navbar />

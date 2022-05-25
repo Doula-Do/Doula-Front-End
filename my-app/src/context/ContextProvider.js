@@ -16,8 +16,6 @@ const ContextProvider = (props) => {
   const [gender, setgenderWm] = useState("")
   const [isAuth, setIsAuth] = useState(false);
 
-
-
   useEffect(() => {
     const userToken = window.localStorage.getItem("token");
     if (!userToken) return

@@ -108,7 +108,7 @@ function UserProfile() {
                   </div>
                 </div>
               </div>
-              {user.id === id && (
+              {+user.id === +id && (
                 <>
                   <div className="card card-white grid-margin">
                     <div className="card-body">

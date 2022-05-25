@@ -17,9 +17,11 @@ function Dropdown(props) {
     deleteAPost(postId);
     const newPostFeed = posts.filter((post) => post.id !== +postId);
     setPosts([...newPostFeed]);
+    const deletedPostFeed = props.profilePosts.filter(post => post.id !== +postId);
+    props.setprofilePosts([...deletedPostFeed]);
   }
 
-  function handleUpdatePost() {
+  async function handleUpdatePost() {
     const postId = props.postid;
     async function updateAPost(id) {
       const response = await fetch(`http://localhost:8000/post/${id}`, {
@@ -30,13 +32,16 @@ function Dropdown(props) {
         })
       });
       const data = await response.json();
-      const updatedContent = data.content;
-      const foundPost = posts.findIndex(post => post.id === id);
-      posts[foundPost].content = updatedContent;
+      const foundPost = props.profilePosts.findIndex(post => post.id === +id);
+      props.profilePosts[foundPost].content = currInput;
       setPosts([...posts]);
     }
     
-    updateAPost(postId);
+    await updateAPost(postId);
+    fetch("http://localhost:8000/posts")
+    .then(response => response.json())
+    .then(data => setPosts(data.data))
+    setcurrInput("");
   }
 
   return (

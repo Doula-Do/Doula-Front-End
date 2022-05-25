@@ -1,3 +1,19 @@
+*{
+    font-size: 100%;
+    font-family: sans-serif;
+}
+ul {
+    list-style-type: none;
+}
+
+.recommendedNames {
+    color:black;
+}
+
+.recommendedNames:hover {
+    color: #9bbca9;
+}
+
 body {
     background:#eee;
     margin-top: 20px;

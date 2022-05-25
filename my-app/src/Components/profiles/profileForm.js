@@ -1,9 +1,9 @@
 import AppContext from "../../context/AppContext";
 import { useContext } from "react";
 
-function PostForm() {
-  const {postInput, setpostInput, posts, setPosts, user} = useContext(AppContext);
-  
+function ProfileForm(props) {
+  const {postInput, setpostInput, user} = useContext(AppContext);
+
   function handleInput(e) {
     setpostInput(e.target.value);
   }
@@ -22,12 +22,12 @@ function PostForm() {
      const data = await response.json();
      data.post[0].first_name = user.first_name;
      data.post[0].last_name = user.last_name;
-    //  setPosts([data.post[0], ...posts]);
+    //  props.setprofilePosts([data.post[0], ...props.profilePosts]);
     }
     await createNewPost();
     fetch("http://localhost:8000/posts")
     .then(response => response.json())
-    .then(data => setPosts(data.data))
+    .then(data => props.setprofilePosts(data.data.filter(post => post.user_id === user.id)))
     setpostInput("");
   }
 
@@ -49,4 +49,4 @@ function PostForm() {
   );
 }
 
-export default PostForm;
+export default ProfileForm;

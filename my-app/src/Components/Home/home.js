@@ -1,12 +1,9 @@
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/footer";
 import Menu from "./menu";
-import About from "./about";
-import ContactInfo from "./contactInfo";
 import PostForm from "./postForm";
 import Post from "./post";
 import "./home.css";
-import { useEffect } from "react";
 import AppContext from "../../context/AppContext";
 import {useContext} from 'react';
 import ConnectedDoulas from "./doulasConnected";
@@ -14,12 +11,6 @@ import ConnectedDoulas from "./doulasConnected";
 
 function Home() {
   const {posts, setPosts, user} = useContext(AppContext);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/posts")
-    .then(response => response.json())
-    .then(data => setPosts(data.data))
-  },[])
 
   return (
     <div>

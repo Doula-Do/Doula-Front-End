@@ -3,35 +3,47 @@ import { Link } from 'react-router-dom'
 import {useState} from 'react'
 import pregnantMom from './pregnantMother.webp'
 function SignIn() {
-	const [email ,setEmail] = useState("")
+import { useNavigate } from "react-router-dom";
+import AppContext from "../../context/AppContext";
+import {useContext} from 'react';
+function SignIn({setAuth}) {
+
+  const [email ,setEmail] = useState("")
 	const [password, setPassword] = useState("")
+	const {setUser} = useContext(AppContext);
+	const navigate = useNavigate();
 
-	const onFormSubmit = (e) => {
+	const onFormSubmit = async (e) => {
 		e.preventDefault()
-		const options = {
-            method: 'POST',
-			headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({email:email, password:password})
-        };
+		const loginData = {
+			email,
+			password,
+		  };
 
-      try{
-        fetch('http://localhost:8000/login', options).then((response) => {
-			if(response.status !== 200){
-				alert("wrong email or password")
-				return;
-			}
-         document.location.replace("/")
-        });
-      }
+		  const res = await fetch(`http://localhost:8000/login`, {
+			method: "POST",
+			headers: {
+			  "Content-Type": "application/json",
+			},
+			body: JSON.stringify(loginData),
+		  });
+		  const data = await res.json();
+		  console.log(data.user);
+		  if (data.token) {
+			window.localStorage.setItem("token", data.token);
+			setAuth(true);
+		  } else {
+			setAuth(false);
+		  }
+		  if (data.rows.length > 1) {
+			navigate("/", { replace: true });
+			// setUser(data.user);
+		  }
+		  setEmail("");
+		  setPassword("");
 
-      catch (error) {
-        alert('Login Failed. Try Again')
-      }
+};
 
-    };
-
-	
-	
     return (
 		<div className="main">
       {/* <img class= "image" alt="" src= {pregnantMom} />  */}

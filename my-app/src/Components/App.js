@@ -1,7 +1,7 @@
 import "../App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Homepage from "../Components/Homepage/Homepage";
+import Homepage from "./Map/clinicMap.js";
 import SignIn from "./SignInPage/SignIn";
 import { Routes, Route } from "react-router-dom";
 import Impacts from "./ImpactsPage/Impacts";

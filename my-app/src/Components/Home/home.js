@@ -7,12 +7,12 @@ import "./home.css";
 import AppContext from "../../context/AppContext";
 import {useContext} from 'react';
 import ConnectedDoulas from "./doulasConnected";
+import {Navigate} from 'react-router-dom'
 
 
 function Home() {
-  const {posts, setPosts, user} = useContext(AppContext);
-
-  return (
+  const {posts, setPosts, user, isAuth} = useContext(AppContext);
+  return !isAuth ? <Navigate to="/" /> : (
     <div>
       <Navbar />
         <div className="page-inner no-page-title pageContainer">

@@ -1,7 +1,7 @@
 import "./signin.css"; 
 import { Link } from 'react-router-dom'
 import {useState} from 'react'
-
+import pregnantMom from './pregnantMother.webp'
 function SignIn() {
 	const [email ,setEmail] = useState("")
 	const [password, setPassword] = useState("")
@@ -34,7 +34,9 @@ function SignIn() {
 	
     return (
 		<div className="main">
-			<p className="sign" align="center">Sign in</p>
+      {/* <img class= "image" alt="" src= {pregnantMom} />  */}
+      <p className="doulado" align="center">Welcome to DoulaDo!</p>
+			<p className="sign" align="center">Sign in!</p>
 			<form className="form1">
 			{/* <input class="un " type="text" align="center" placeholder="Username"/> */}
 			<input className="un " type="text" autoComplete="username" align="center" placeholder="Email" value={email} onChange={(e)=> {setEmail(e.target.value);} }/>

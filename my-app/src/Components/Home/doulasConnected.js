@@ -25,7 +25,7 @@ function ConnectedDoulas() {
       </div>
       <div className="card-body">
         <ul>
-          {doulas.map(doula => <li><Link to={`/user/${doula.id}`}><button className="btn w-50 mx-auto fw-bold modalButton">{doula.first_name} {doula.last_name}</button></Link></li>)}
+          {doulas.map(doula =><li><Link to={`/user/${doula.id}`}><button className="btn w-100 mx-auto fw-bold modalButton">{doula.first_name} {doula.last_name}</button></Link></li>)}
         </ul>
       </div>
       <hr />
@@ -34,7 +34,7 @@ function ConnectedDoulas() {
       </div>
       <div className="card-body">
         <ul>
-          {users.map(user => <li><Link to={`/user/${user.id}`} className="recommendedNames"><button className="btn w-50 mx-auto fw-bold modalButton">{user.first_name} {user.last_name}</button></Link></li>)}
+          {users.map(user =><li><Link to={`/user/${user.id}`} className="recommendedNames"><button className="btn w-100 mx-auto fw-bold modalButton">{user.first_name} {user.last_name}</button></Link></li>)}
         </ul>
       </div>
     </div>

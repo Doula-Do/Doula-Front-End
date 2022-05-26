@@ -22,7 +22,7 @@ function Menu(props) {
       <br></br>
       <Link to={`/user/${userId}`}><button className="btn w-50 mx-auto fw-bold modalButton my-3">Profile</button></Link>
       <br></br>
-      <button className="btn w-50 mx-auto fw-bold modalButton">Messages</button>
+      <Link to={'/chat'}><button className="btn w-50 mx-auto fw-bold modalButton">Messages</button></Link>
       <br></br>
       <button className="btn w-50 mx-auto fw-bold modalButton my-3" onClick={logout}>Log Out</button>
     </div>

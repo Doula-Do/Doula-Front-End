@@ -16,7 +16,7 @@ function UserProfile() {
   const [profileUser, setprofileUser] = useState({});
   const [profilePosts, setprofilePosts] = useState([]);
   const { id } = useParams();
-  console.log(+user.id === +id)
+  
   useEffect(() => {
     if (!user.id) return
     fetch(`http://localhost:8000/user/${id}`)
@@ -143,7 +143,6 @@ function UserProfile() {
         </div>
         {/* <!-- end page main wrapper --> */}
       </div>
-      <Footer />
     </div>
   );
 }

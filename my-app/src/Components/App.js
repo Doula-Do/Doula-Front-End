@@ -11,6 +11,8 @@ import SignUp from "./SignUpPages/SignUp";
 // import FamilySignUpTwo from "./SignUpPages/FamilySignUp2";
 import UserProfile from "./profiles/userProfile";
 import { useState, useEffect } from "react";
+import ChatRoom from "./chat/chat";
+import ChatUser from "./chat/chatUser";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -32,6 +34,8 @@ function App() {
         {/* <Route path="/FamilySignUpTwo" element={<FamilySignUpTwo />} />  */}
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/user/:id" element={<UserProfile />} />
+        <Route path="/chat" element={<ChatRoom />}/>
+        <Route path="/chat/:id" element={<ChatUser />}/>
       </Routes>
     </div>
   );

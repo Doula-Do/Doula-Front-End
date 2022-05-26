@@ -50,7 +50,6 @@ function Home() {
           </div>
           {/* <!-- end page main wrapper --> */}
         </div>
-      <Footer />
     </div>
   );
 }

@@ -93,11 +93,13 @@ function UserProfile() {
                 <div className="bio-graph-heading">
                   {profileUser.is_doula && (
                     <>
+                      <img className="profilePic" src="https://thumbs.dreamstime.com/b/midwife-sign-icon-hands-hand-drawn-logo-symbol-t-shirt-prints-online-marketing-midwife-sign-icon-hands-153017040.jpg"/>
                       <h2>Doula Profile</h2>
                     </>
                   )}
                   {!profileUser.is_doula && (
                     <>
+                    <img className="profilePic" src="https://thumbs.dreamstime.com/b/beautiful-pregnant-woman-shapes-sketch-illustration-portrait-young-belly-silhouette-173512778.jpg"/>
                       <h2>User Profile</h2>
                     </>
                   )}

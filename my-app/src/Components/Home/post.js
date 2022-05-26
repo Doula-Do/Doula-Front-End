@@ -26,10 +26,22 @@ function Post(props) {
         <div className="card-body">
           <div className="timelineHeader">
             <div className="timeline-item-header timelineHeader">
-              <img
-                src="https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="
-                alt=""
-              />
+              {post.is_doula && (
+                <>
+                  <img
+                    src="https://thumbs.dreamstime.com/b/midwife-sign-icon-hands-hand-drawn-logo-symbol-t-shirt-prints-online-marketing-midwife-sign-icon-hands-153017040.jpg"
+                    alt=""
+                  />
+                </>
+              )}
+              {!post.is_doula && (
+                <>
+                  <img
+                    src="https://thumbs.dreamstime.com/b/beautiful-pregnant-woman-shapes-sketch-illustration-portrait-young-belly-silhouette-173512778.jpg"
+                    alt=""
+                  />
+                </>
+              )}
               <pre>
                 <Link to={`/user/${userPostedId}`}>
                   <p>                 

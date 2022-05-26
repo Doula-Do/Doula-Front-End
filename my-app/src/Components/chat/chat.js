@@ -28,9 +28,9 @@ function ChatRoom() {
             </div>
             <div className="col-lg-7 col-xl-6">
               <div className="card card-white grid-margin">
-                <div className="card-body mx-auto">
-                    <img src="https://i.pinimg.com/originals/44/67/ce/4467ceda95866abb6e9060609fc81360.gif"/>
-                    <h2 className="my-2">Click to connect!</h2>
+                <div className="card-body d-flex flex-column mx-auto">
+                    <img style={{height: "550px"}} src="https://i.pinimg.com/originals/77/20/49/7720496b8ba8593ebe575a580d5ba745.jpg"/>
+                    <h2 className="my-2">Click a User or Doula to Connect With</h2>
                 </div>
               </div>
             </div>

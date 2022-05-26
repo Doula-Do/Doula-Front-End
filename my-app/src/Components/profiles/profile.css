@@ -17,6 +17,12 @@
     font-weight: 300;
 }
 
+.profilePic {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
 .bio-graph-info {
     color: #89817e;
     margin-top: 20px;

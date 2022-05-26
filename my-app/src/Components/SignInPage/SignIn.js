@@ -53,8 +53,7 @@ function SignIn() {
 		<input className="pass" type="password"  autoComplete="current-password" align="center" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value)}}/>
 		<button onClick={onFormSubmit} type="submit" className="submit" align="center">Sign in</button>
 		</form>
-		<p className="forgot" align="center">Forgot Password?</p>  
-		<p className="notenrolled" align="center">Not Enrolled? Sign Up Now.</p>    
+		<p className="notenrolled p-2" align="center">Not Enrolled? Sign Up Now.</p>    
 		<button type="submit" className="doulasignup" align="center"><Link to="/DoulaSignUp">Doula Sign Up</Link></button><br/><br/>
 		<button  type="submit" className="familysignup" align="center"> <Link to="/FamilySignUp">Family Sign Up</Link></button>          
 </div>

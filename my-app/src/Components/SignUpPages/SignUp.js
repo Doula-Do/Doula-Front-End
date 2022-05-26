@@ -1,52 +1,58 @@
 import "./signup.css";
 import { useState } from "react";
-import { Link, useNavigate, Navigate } from "react-router-dom";
-import AppContext from "../../context/AppContext";
-import { useContext } from "react";
-import { FormGroup, Label, Input } from "reactstrap";
+import { Link, useNavigate} from "react-router-dom";
+import Swal from 'sweetalert2';
 
 function SignIn() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [doulaExperience, setDoulaExperience] = useState("");
-  const { setUser, auth, isAuth, setIsAuth } = useContext(AppContext);
+  const [gender, setGender] = useState("");
+  const [medicaid, setMedicaid] = useState("No");
+  const [isDoula, setIsDoula] = useState("No");
   const navigate = useNavigate();
 
-  const onFormSubmit = (e) => {
+  function handleFNameInput(e) {
+    setFirstName(e.target.value);
+  }
+
+  function handleLNameInput(e) {
+    setLastName(e.target.value);
+  }
+
+  function handleGenderInput(e) {
+    setGender(e.target.value);
+  }
+
+  function handleMedicaidInput(e) {
+    setMedicaid(e.target.value);
+  }
+
+  function handleDoulaInput(e) {
+    setIsDoula(e.target.value);
+  }
+
+  function handleRegister(e) {
     e.preventDefault();
-    const loginData = {
-      email,
-      password,
-    };
-    async function loginUser() {
-      const res = await fetch(`http://localhost:8000/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-      });
-      const data = await res.json();
-      if (!data.token) {
-        setIsAuth(false);
-        return;
-      }
-      window.localStorage.setItem("token", data.token);
-      window.localStorage.setItem("id", data.user.id);
+    fetch("http://localhost:8000/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        password,
+        gender,
+        medicaid,
+        is_doula: isDoula === "Yes" ? true : false
+      })})
+    .then(response => response.json())
+    Swal.fire('Successfully Registered');
+    navigate("/", {replace:true});
+  }
 
-      setIsAuth(true);
-      setUser(data.user);
-      navigate("/home");
-    }
-    loginUser();
-
-    setEmail("");
-    setPassword("");
-  };
-
-  return isAuth ? (
-    <Navigate to="/home" />
-  ) : (
+  return (
     <div className="main">
       {/* <img class= "image" alt="" src= {pregnantMom} />  */}
       <p className="doulado" align="center">
@@ -65,6 +71,8 @@ function SignIn() {
           align="center"
           placeholder="First Name"
           required
+          value={firstName}
+          onChange={handleFNameInput}
         />
         <input
           className="pass"
@@ -73,6 +81,8 @@ function SignIn() {
           align="center"
           placeholder="Last Name"
           required
+          value={lastName}
+          onChange={handleLNameInput}
         />
         <input
           className="pass"
@@ -115,39 +125,49 @@ function SignIn() {
           align="center"
           placeholder="Confirm Password"
           required
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
         />
         <input
           className="pass"
           type="text"
           align="center"
           placeholder="Gender"
+          value={gender}
+          onChange={handleGenderInput}
         />
-
         <input
           className="pass"
           type="tel"
           id="phone"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
           align="center"
           placeholder="Enter Your Phone Number"
           required
         />
         <p id="medicaidques"> Do you Have Medicaid</p>
-        <Input id="medicaidSelect" name="select" type="select">
+        <select
+          id="medicaidSelect"
+          className="form-select"
+          name="select"
+          type="select"
+          value={medicaid}
+          onChange={handleMedicaidInput}
+        >
           <option>Yes</option>
           <option>No</option>
-        </Input>
-
+        </select>
         <p id="doulaques"> Are you a Doula?</p>
-        <Input id="medicaidSelect" name="select" type="select">
+        <select
+          id="medicaidSelect"
+          className="form-select"
+          name="select"
+          type="select"
+          value={isDoula}
+          onChange={handleDoulaInput}
+        >
           <option>Yes</option>
           <option>No</option>
-        </Input>
-        <p id="doulaexperience">  How long have you been a doula?</p>
-        <Input
+        </select>
+        {/* <p id="doulaexperience">  How long have you been a doula?</p> */}
+        {/* <Input
           value={doulaExperience}
           onChange={(event) => {
             setDoulaExperience(event.target.value);
@@ -162,11 +182,20 @@ function SignIn() {
           <option>5-10years</option>
           <option>More than 10 years</option>
           <option>5 years</option>
-        </Input>
-
-        <button type="submit" className="doulasignup" align="center">
-          Register
-        </button>
+        </Input> */}
+        <div className="d-flex justify-content-around ">
+          <button type="submit" className="doulasignup">
+            <Link to={"/"}>Back to Sign In</Link>
+          </button>
+          <button
+            type="submit"
+            className="doulasignup"
+            align="center"
+            onClick={handleRegister}
+          >
+            Register
+          </button>
+        </div>
       </form>
     </div>
   );

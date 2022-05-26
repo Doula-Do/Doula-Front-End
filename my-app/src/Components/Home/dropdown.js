@@ -17,8 +17,6 @@ function Dropdown(props) {
     deleteAPost(postId);
     const newPostFeed = posts.filter((post) => post.id !== +postId);
     setPosts([...newPostFeed]);
-    // const deletedPostFeed = props.profilePosts.filter(post => post.id !== +postId);
-    // props.setprofilePosts([...deletedPostFeed]);
   }
 
   function handleUpdatePost() {
@@ -34,15 +32,10 @@ function Dropdown(props) {
       const data = await response.json();
       const foundPost = posts.findIndex(post => post.id === +id);
       posts[foundPost].content = data.content;
-      // const foundPost = props.profilePosts.findIndex(post => post.id === +id);
-      // props.profilePosts[foundPost].content = currInput;
       setPosts([...posts]);
     }
     
     updateAPost(postId);
-    // fetch("http://localhost:8000/posts")
-    // .then(response => response.json())
-    // .then(data => setPosts(data.data))
     setcurrInput("");
   }
 

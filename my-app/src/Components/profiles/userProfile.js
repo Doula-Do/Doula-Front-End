@@ -7,7 +7,6 @@ import { useContext } from "react";
 import ConnectedDoulas from "../Home/doulasConnected";
 import { useParams, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ProfileForm from "./profileForm";
 import "./profile.css";
 
 function UserProfile() {
@@ -33,7 +32,6 @@ function UserProfile() {
     <div>
       <Navbar />
       <div className="page-inner no-page-title pageContainer">
-        {/* <!-- start page main wrapper --> */}
         <div id="main-wrapper">
           <div className="row">
             <div className="col-lg-5 col-xl-3">
@@ -107,18 +105,6 @@ function UserProfile() {
                   </div>
                 </div>
               </div>
-              {+user.id === +id && (
-                <>
-                  <div className="card card-white grid-margin">
-                    <div className="card-body">
-                      <ProfileForm
-                        setprofilePosts={setprofilePosts}
-                        profilePosts={profilePosts}
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
               <div className="profile-timeline">
                 <ul className="list-unstyled">
                   {profilePosts.length > 0 &&
@@ -126,9 +112,6 @@ function UserProfile() {
                       <Post
                         p={data}
                         key={data.id}
-                        profileId={id}
-                        profilePosts={profilePosts}
-                        setprofilePosts={setprofilePosts}
                       />
                     ))}
                 </ul>
@@ -138,9 +121,7 @@ function UserProfile() {
               <ConnectedDoulas />
             </div>
           </div>
-          {/* <!-- Row --> */}
         </div>
-        {/* <!-- end page main wrapper --> */}
       </div>
     </div>
   );

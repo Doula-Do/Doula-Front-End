@@ -29,12 +29,12 @@ function App() {
   }
 
   return isLoaded && clinics ? (
-    <div className="googlemap">
     <GoogleMap
       
       mapContainerStyle={{
-        width: "700px",
-        height: "700px",
+        width: "1000px",
+        height: "600px",
+        margin: "7em auto",
       }}
       zoom={10}
       center={{
@@ -48,7 +48,6 @@ function App() {
         );
       })}
     </GoogleMap>
-    </div>
   ) : (
     <Spinner />
   );
@@ -56,7 +55,9 @@ function App() {
 function CustomMarker({ id, latitude, longitude, clinic_name, phone_number, address, zipcode }){
   const [show, setShow] = useState(false)
   return (
-    <MarkerF key={id} position={{
+    <MarkerF onClick={() => setShow(!show)}
+    // onDblClick={() => setShow(false)}
+    key={id} position={{
       lat: latitude,
     lng: longitude,
     }}>

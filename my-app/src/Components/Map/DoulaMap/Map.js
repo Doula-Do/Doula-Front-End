@@ -34,7 +34,7 @@ function App() {
       mapContainerStyle={{
         width: "1000px",
         height: "600px",
-        margin: "7em auto",
+        margin: "3em auto",
       }}
       zoom={10}
       center={{

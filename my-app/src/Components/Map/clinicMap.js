@@ -9,17 +9,10 @@ function Homepage() {
     return(
         <div className='background'>
         <Navbar/>
-        <div className='pagebody' >
-        <h4 className='Main'>DoulaDo is a community-based application that allows expecting parent(s) to connect with caring, supportive, and experience Doula's in their neighborhood.</h4>
-        <h4 className='Main'>Approach birth as an opportunity to have an adventureon the way to meeting your baby (rather than ordeal to be endured).
--Anna Wilde</h4>
-<h2>Find a Doula Near You!</h2>
-        </div>
-        
-        
-        <div className= 'Map'>
+        <h2 className="text-center top" >Find a Doula Near You!</h2>
+        {/* <div className='Map'> */}
         <DoulaMapLoader className= 'Map'/>
-        </div>
+        {/* </div> */}
         <Footer/>
         </div>
     )

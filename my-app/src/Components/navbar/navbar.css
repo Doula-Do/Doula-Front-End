@@ -21,3 +21,22 @@
 .pageLinks:hover {
     color:white;
 }
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blinking {
+    from { border-color: transparent }
+    to { border-color: black; }
+  }
+
+  .typed-out{
+    overflow: hidden;
+    border-right: .15em solid black;
+    white-space: nowrap;
+    font-size: 1.6rem;
+    width: 0;
+    animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
+}

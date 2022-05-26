@@ -9,7 +9,7 @@ function ConnectedDoulas() {
   useEffect(() => {
     fetch('http://localhost:8000/users')
     .then(response => response.json())
-    .then(data => setUsers(data.data.filter(people => people.id !== +user.id)));
+    .then(data => setUsers(data.data.filter(people => people.id !== +user.id && people.is_doula === false)));
 
     fetch("http://localhost:8000/users")
       .then((response) => response.json())

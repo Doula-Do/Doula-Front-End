@@ -43,7 +43,7 @@ function SignIn() {
   };
 
   return isAuth ? <Navigate to="/home" /> : (
-	<div className="main">
+	<div className="mainthing">
   {/* <img class= "image" alt="" src= {pregnantMom} />  */}
   <p className="doulado" align="center">Welcome to DoulaDo!</p>
 		<p className="sign" align="center">Sign in!</p>
@@ -55,8 +55,7 @@ function SignIn() {
 		</form>
 		<p className="forgot" align="center">Forgot Password?</p>  
 		<p className="notenrolled" align="center">Not Enrolled? Sign Up Now.</p>    
-		<button type="submit" className="doulasignup" align="center"><Link to="/DoulaSignUp">Doula Sign Up</Link></button><br/><br/>
-		<button  type="submit" className="familysignup" align="center"> <Link to="/FamilySignUp">Family Sign Up</Link></button>          
+		<button type="submit" className="doulasignupButton" align="center"><Link to="/SignUp">Sign Up Now!</Link></button><br/><br/>
 </div>
 );
 };

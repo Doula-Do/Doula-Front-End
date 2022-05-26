@@ -7,7 +7,7 @@ import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import Impacts from "./ImpactsPage/Impacts";
 import FamilySignUp from "./SignUpPages/FamilySignUp.js";
 import Home from "./Home/home.js";
-import DoulaSignUp from "./SignUpPages/DoulaSignUp";
+import SignUp from "./SignUpPages/SignUp";
 // import FamilySignUpTwo from "./SignUpPages/FamilySignUp2";
 import UserProfile from "./profiles/userProfile";
 import { useState, useEffect } from "react";
@@ -30,7 +30,7 @@ function App() {
         <Route path="/testimonials" element={<Impacts />} />
         <Route path="/FamilySignUp" element={<FamilySignUp />} />
         {/* <Route path="/FamilySignUpTwo" element={<FamilySignUpTwo />} />  */}
-        <Route path="/DoulaSignUp" element={<DoulaSignUp />} />
+        <Route path="/SignUp" element={<SignUp />} />
         <Route path="/user/:id" element={<UserProfile />} />
       </Routes>
     </div>

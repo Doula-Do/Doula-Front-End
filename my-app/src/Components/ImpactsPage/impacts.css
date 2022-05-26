@@ -2,7 +2,7 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-color: rgb(233, 150, 150);
+    /* background-color: rgb(233, 150, 150); */
     font-family: 'Open Sans';
 }
 .demo{
@@ -58,12 +58,13 @@
         margin-top: 0.5rem;
     }
 }
-/* i{
-    background-color: rgb(223, 56, 89);
+.Arrow {
+    background-color: #9bbca9;
+    border-radius: 10px;
     padding: 1.4rem;
-} */
+}
 @media(max-width:767px){
-    i{
+    .Arrow{
         padding: 0.8rem;
     }
 }

@@ -23,13 +23,13 @@ function SearchBar() {
   }, []);
 
   return (
-    <div className="card card-white grid-margin text-center">
+    <div className="card card-white grid-margin text-center mx-auto">
       <div className="card-heading clearfix">
         <h4 className="card-title">Users</h4>
       </div>
       <div className="card-body">
         <ul>
-            {users.map(person =><li><Link className="recommendedNames" to={`/chat/${person.id}`}>{person.first_name} {person.last_name}</Link></li>)}
+            {users.map(person =><li><Link className="recommendedNames" to={`/chat/${person.id}`}><button className="btn w-50 mx-auto fw-bold modalButton">{person.first_name} {person.last_name}</button></Link></li>)}
         </ul>
       </div>
       <hr />
@@ -38,7 +38,7 @@ function SearchBar() {
       </div>
       <div className="card-body">
         <ul>
-            {doulas.map(person =><li><Link className="recommendedNames" to={`/chat/${person.id}`}>{person.first_name} {person.last_name}</Link></li>)}
+            {doulas.map(person =><li><Link className="recommendedNames" to={`/chat/${person.id}`}><button className="btn w-50 mx-auto fw-bold modalButton">{person.first_name} {person.last_name}</button></Link></li>)}
         </ul>
       </div>
     </div>

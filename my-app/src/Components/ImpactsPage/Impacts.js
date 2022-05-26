@@ -79,7 +79,6 @@ function Impacts() {
           </div> */}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

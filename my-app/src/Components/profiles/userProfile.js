@@ -1,5 +1,4 @@
 import Navbar from "../navbar/Navbar";
-import Footer from "../footer/footer";
 import Menu from "../Home/menu";
 import Post from "../Home/post";
 import "../Home/home.css";

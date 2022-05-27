@@ -25,25 +25,26 @@ body {
 }
 
 .modalButton {
-    border: 2px solid #9bbca9;
+    border: 2px solid #3F582E;
     background-color: white;;
     color: black
 }
 
 .modalButton:hover {
-    border: 2px solid #9bbca9;
-    background-color: #9bbca9;
+    border: 2px solid #3F582E;
+    color:white;
+    background-color: #3F582E;
 }
 
 .postButton {
-    border: 2px solid #9bbca9;
+    border: 2px solid #3F582E;
     background-color: white;;
     color: black
 }
 
 .postButton:hover {
-    border: 2px solid #9bbca9;
-    background-color: #9bbca9;
+    border: 2px solid #3F582E;
+    background-color: #3F582E;
 }
 
 .timelineHeader {

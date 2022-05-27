@@ -112,20 +112,20 @@ function ChatUser() {
                       messages.map((message) => (
                         <div
                           className={`d-flex flex-row justify-content-${
-                            +message.sender_id === +user.id ? "end" : "start"
+                            message.sender_id === +user.id ? "end" : "start"
                           } mb-4`}
                         >
                           <div>
                             <p
                               className={`small p-2 me-3 mb-1 text-${
                                 +message.sender_id === +user.id
-                                  ? "black"
+                                  ? "white"
                                   : "dark"
                               } rounded-3`}
                               style={{
                                 backgroundColor:
                                   +message.sender_id === +user.id
-                                    ? "#9bbca9"
+                                    ? "#3F582E"
                                     : "#e4e6eb",
                               }}
                             >

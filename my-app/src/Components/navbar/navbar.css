@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #e8ced6;
+    background-color: #3F582E;
     color: black;
     margin-top: -20px;
 }
@@ -29,10 +29,11 @@
 
   @keyframes blinking {
     from { border-color: transparent }
-    to { border-color: black; }
+    to { border-color: white; }
   }
 
   .typed-out{
+    color: white;
     overflow: hidden;
     border-right: .15em solid black;
     white-space: nowrap;

@@ -8,12 +8,11 @@ import DoulaMapLoader from './DoulaMap/Map.js';
 function Homepage() {
     return(
         <div className='background'>
-        <Navbar/>
-        <h2 className="text-center top" >Find a Doula Near You!</h2>
+        <h2 id= 'finddoula'className="text-center top"  >Find a Doula Near You!</h2>
         {/* <div className='Map'> */}
         <DoulaMapLoader className= 'Map'/>
         {/* </div> */}
-        <Footer/>
+        {/* <Footer/> */}
         </div>
     )
 }

@@ -1,0 +1,74 @@
+.navbar {
+    background-color: #e8ced6;
+    color: black;
+    margin-top: -20px;
+}
+
+.name {
+    margin-left: 20px;
+    color: black;
+}
+
+.navLinkHolder {
+    display: flex;
+}
+
+.pageLinks {
+    text-decoration: none;
+    color:black;
+}
+
+.pageLinks:hover {
+    color:white;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blinking {
+    from { border-color: transparent }
+    to { border-color: black; }
+  }
+
+  .typed-out{
+    overflow: hidden;
+    border-right: .15em solid black;
+    white-space: nowrap;
+    font-size: 1.6rem;
+    width: 0;
+    animation: typing 1s steps(20, end) forwards, blinking .8s infinite;
+}
+.landingSignUp {
+    cursor: pointer;
+      border-radius: 5em;
+      color: #fff;
+      background: linear-gradient(to right, #9C27B0, #E040FB);
+      border: 0;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      margin-left: 20px;
+      font-size: 13px;
+      box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+      margin-left: 400px;
+  }
+  .landingSignIn {
+    cursor: pointer;
+      border-radius: 5em;
+      color: #fff;
+      background: linear-gradient(to right, #9C27B0, #E040FB);
+      border: 0;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      font-family: 'Ubuntu', sans-serif;
+      margin-left: 20px;
+      font-size: 13px;
+      box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+      margin-left: 400px;
+  }

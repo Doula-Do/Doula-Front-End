@@ -13,6 +13,7 @@ import UserProfile from "./profiles/userProfile";
 import { useState, useEffect } from "react";
 import ChatRoom from "./chat/chat";
 import ChatUser from "./chat/chatUser";
+import LandingPage from "./LandingPage/landingpage";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/user/:id" element={<UserProfile />} />
         <Route path="/chat" element={<ChatRoom />}/>
         <Route path="/chat/:id" element={<ChatUser />}/>
+        <Route path="/landingpage" element={<LandingPage />} />
       </Routes>
     </div>
   );

@@ -1,6 +1,6 @@
 import "./signin.css";
 import { useState } from "react";
-import pregnantMom from './pregnantMother.webp'
+// import pregnantMom from './pregnantMother.webp'
 import { Link, useNavigate, Navigate } from "react-router-dom";
 import AppContext from "../../context/AppContext";
 import { useContext } from "react";
